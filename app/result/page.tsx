@@ -413,4 +413,4 @@ function ScoreRow({
       </div>
     </div>
   );
-}
+} 

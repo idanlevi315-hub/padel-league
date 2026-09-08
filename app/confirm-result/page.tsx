@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "../../lib/supabase";
 
@@ -20,15 +19,18 @@ type Match = {
 };
 
 export default function ConfirmResultPage() {
-  const searchParams = useSearchParams();
-  const matchId = searchParams.get("id");
-
   const [match, setMatch] = useState<Match | null>(null);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     async function loadMatch() {
+      const params = new URLSearchParams(
+        window.location.search
+      );
+
+      const matchId = params.get("id");
+
       if (!matchId) {
         setMessage("Match ID is missing.");
         setLoading(false);
@@ -53,7 +55,7 @@ export default function ConfirmResultPage() {
     }
 
     loadMatch();
-  }, [matchId]);
+  }, []);
 
   async function confirmResult() {
     if (!match) return;

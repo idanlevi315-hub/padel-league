@@ -112,15 +112,12 @@ export default function ResultPage() {
       return false;
     }
 
-    // 6-0 to 6-4
     if (a === 6 && b <= 4) return true;
     if (b === 6 && a <= 4) return true;
 
-    // 7-5
     if (a === 7 && b === 5) return true;
     if (b === 7 && a === 5) return true;
 
-    // 7-6
     if (a === 7 && b === 6) return true;
     if (b === 7 && a === 6) return true;
 
@@ -170,7 +167,9 @@ export default function ResultPage() {
     const winner2 = setWinner(set2);
 
     if (!winner1 || !winner2) {
-      setMessage("The sets must have a winner.");
+      setMessage(
+        "The sets must have a winner."
+      );
       return;
     }
 
@@ -232,7 +231,9 @@ export default function ResultPage() {
       .eq("id", match.id);
 
     if (error) {
-      setMessage("Error: " + error.message);
+      setMessage(
+        "Error: " + error.message
+      );
       setSaving(false);
       return;
     }
@@ -318,8 +319,8 @@ export default function ResultPage() {
             </section>
 
             <div className="mt-4 rounded-2xl bg-white/5 p-4 text-sm text-white/60">
-              Valid set scores include 6-0 to 6-4,
-              7-5 and 7-6.
+              Valid set scores include 6-0 to
+              6-4, 7-5 and 7-6.
             </div>
 
             <button
@@ -369,7 +370,9 @@ function ScoreRow({
 }) {
   return (
     <div>
-      <p className="mb-3 font-bold">{label}</p>
+      <p className="mb-3 font-bold">
+        {label}
+      </p>
 
       <div className="grid grid-cols-[1fr_70px] items-center gap-3">
         <span className="truncate text-sm">

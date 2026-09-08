@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "../components/LanguageProvider";
 
 export default function HomePage() {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const copy =
     language === "es"
@@ -12,7 +12,7 @@ export default function HomePage() {
           rules: "REGLAMENTO",
           registrationOpen: "INSCRIPCIÓN ABIERTA",
           subtitle:
-            "Partidos semanales. Dos grupos. Un campeonato.",
+            "Partidos semanales. Dos grupos. Una comunidad.",
           register: "INSCRIBIR PAREJA",
           standings: "CLASIFICACIÓN",
 
@@ -45,9 +45,9 @@ export default function HomePage() {
             "Cuartos de final, semifinales y final.",
 
           joinLabel: "INSCRIPCIÓN",
-          joinTitle: "Únete a la liga.",
+          joinTitle: "Únete a EQUIPO.",
           joinText:
-            "Registra tu pareja y elige tu nivel de juego.",
+            "Registra tu pareja y forma parte de la comunidad.",
 
           admin: "ADMIN",
         }
@@ -55,7 +55,7 @@ export default function HomePage() {
           rules: "RULES",
           registrationOpen: "REGISTRATION OPEN",
           subtitle:
-            "Weekly matches. Two groups. One championship.",
+            "Weekly matches. Two groups. One community.",
           register: "REGISTER TEAM",
           standings: "STANDINGS",
 
@@ -88,48 +88,51 @@ export default function HomePage() {
             "Quarterfinals, semifinals and final.",
 
           joinLabel: "REGISTRATION",
-          joinTitle: "Join the league.",
+          joinTitle: "Join EQUIPO.",
           joinText:
-            "Register your team and choose your playing level.",
+            "Register your team and become part of the community.",
 
           admin: "ADMIN",
         };
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
-      {/* HERO */}
+    <main className="bg-[#f4f2ea] text-[#071827]">
       <section className="relative overflow-hidden bg-[#0b2638] text-white">
-        {/* Decorative background */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-24 top-16 h-[330px] w-[330px] rotate-12 rounded-[55px] border border-white/[0.07]" />
+          <div className="absolute -left-28 top-20 h-72 w-72 rotate-[28deg] rounded-[60px] border border-[#d8ff45]/15" />
 
-          <div className="absolute -right-2 top-24 h-[230px] w-[230px] rotate-12 rounded-[42px] border border-[#d8ff45]/15" />
+          <div className="absolute -right-28 top-10 h-[360px] w-[360px] rounded-full border-[45px] border-[#d8ff45]/5" />
 
-          <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-[#d8ff45]/10 blur-3xl" />
+          <div className="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-[#d8ff45]/5 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-5xl px-5 pb-9 pt-5 sm:pb-11">
-          {/* HEADER */}
-          <header className="flex items-center justify-between">
+        <div className="relative mx-auto max-w-5xl px-5 pb-8 pt-4">
+          <header className="grid grid-cols-3 items-start">
+            <div className="flex justify-start pt-2">
+              <Link
+                href="/join/rules"
+                className="hidden border-b border-[#d8ff45]/50 pb-1 text-[9px] font-black tracking-[0.16em] text-white/55 transition hover:text-white sm:block"
+              >
+                {copy.rules}
+              </Link>
+            </div>
+
             <Link
               href="/"
-              className="flex items-center gap-3"
+              className="flex flex-col items-center justify-center"
             >
-              <Logo />
+              <EquipoLogo className="h-[88px] w-[88px] sm:h-[102px] sm:w-[102px]" />
 
-              <div>
-                <div className="text-[14px] font-black tracking-[0.14em]">
-                  PADEL
-                </div>
+              <div className="mt-0.5 text-[19px] font-black tracking-[0.28em] text-white sm:text-[22px]">
+                EQUIPO
+              </div>
 
-                <div className="text-[8px] font-bold tracking-[0.38em] text-white/45">
-                  LEAGUE
-                </div>
+              <div className="mt-1.5 text-[8px] font-black tracking-[0.4em] text-[#d8ff45] sm:text-[9px]">
+                PLAY TOGETHER
               </div>
             </Link>
 
-            <div className="flex items-center gap-4">
-              {/* LANGUAGE */}
+            <div className="flex justify-end pt-1">
               <div className="flex rounded-full border border-white/15 bg-white/[0.05] p-1">
                 <button
                   type="button"
@@ -155,83 +158,49 @@ export default function HomePage() {
                   ES
                 </button>
               </div>
-
-              <Link
-                href="/join/rules"
-                className="hidden border-b border-white/25 pb-1 text-[10px] font-black tracking-[0.12em] text-white/55 transition hover:border-[#d8ff45] hover:text-white sm:block"
-              >
-                {copy.rules}
-              </Link>
             </div>
           </header>
 
-          {/* HERO CONTENT */}
-          <div className="mt-10 grid items-end gap-8 md:grid-cols-[1.15fr_0.85fr] md:gap-12">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5">
-                <span className="h-2 w-2 rounded-full bg-[#d8ff45]" />
+          <div className="mx-auto mt-6 max-w-2xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#d8ff45]" />
 
-                <span className="text-[9px] font-black tracking-[0.14em] text-white/65">
-                  {copy.registrationOpen}
-                </span>
-              </div>
-
-              <h1 className="mt-4 text-[48px] font-black leading-[0.88] tracking-[-0.065em] sm:text-[64px]">
-                PADEL
-                <br />
-                LEAGUE
-              </h1>
-
-              <p className="mt-4 max-w-md text-[14px] leading-6 text-white/60">
-                {copy.subtitle}
-              </p>
+              <span className="text-[9px] font-black tracking-[0.14em] text-white/65">
+                {copy.registrationOpen}
+              </span>
             </div>
 
-            <div>
-              <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
-                <Link
-                  href="/join"
-                  className="flex min-h-[50px] flex-1 items-center justify-between rounded-full bg-[#d8ff45] px-5 text-[12px] font-black text-[#071827] transition hover:scale-[1.01]"
-                >
-                  {copy.register}
+            <p className="mx-auto mt-4 max-w-md text-[14px] leading-6 text-white/60">
+              {copy.subtitle}
+            </p>
 
-                  <span className="text-lg">
-                    →
-                  </span>
-                </Link>
+            <div className="mx-auto mt-6 grid max-w-xl gap-3 sm:grid-cols-2">
+              <Link
+                href="/join"
+                className="flex min-h-[52px] items-center justify-between rounded-full bg-[#d8ff45] px-6 text-[12px] font-black text-[#071827] transition hover:scale-[1.01]"
+              >
+                {copy.register}
+                <span className="text-lg">→</span>
+              </Link>
 
-                <Link
-                  href="/league"
-                  className="flex min-h-[50px] flex-1 items-center justify-center rounded-full border border-white/20 px-5 text-[12px] font-black text-white transition hover:bg-white/10"
-                >
-                  {copy.standings}
-                </Link>
-              </div>
+              <Link
+                href="/league"
+                className="flex min-h-[52px] items-center justify-center rounded-full border border-white/20 px-6 text-[12px] font-black text-white transition hover:bg-white/10"
+              >
+                {copy.standings}
+              </Link>
             </div>
           </div>
 
-          {/* STATS */}
-          <div className="mt-9 grid grid-cols-3 border-t border-white/15 pt-5">
-            <HeroStat
-              value="2"
-              label={copy.groups}
-            />
-
-            <HeroStat
-              value="3"
-              label={copy.pointsWin}
-            />
-
-            <HeroStat
-              value="4"
-              label={copy.advance}
-            />
+          <div className="mx-auto mt-7 grid max-w-xl grid-cols-3 border-t border-white/15 pt-5">
+            <HeroStat value="2" label={copy.groups} />
+            <HeroStat value="3" label={copy.pointsWin} />
+            <HeroStat value="4" label={copy.advance} />
           </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-5 pb-28">
-        {/* QUICK LINKS */}
+      <div className="mx-auto max-w-5xl px-5 pb-10">
         <section className="-mt-px grid overflow-hidden rounded-b-[24px] bg-white shadow-[0_14px_40px_rgba(7,24,39,0.07)] sm:grid-cols-3">
           <HomeLink
             number="01"
@@ -255,7 +224,6 @@ export default function HomePage() {
           />
         </section>
 
-        {/* FORMAT */}
         <section className="py-9 sm:py-11">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
             <div className="shrink-0 md:w-[200px]">
@@ -290,7 +258,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="relative overflow-hidden rounded-[25px] bg-[#d8ff45] px-6 py-6 sm:flex sm:items-center sm:justify-between sm:px-8">
           <div className="absolute -bottom-16 -right-10 h-44 w-44 rounded-full border-[28px] border-[#071827]/5" />
 
@@ -317,11 +284,16 @@ export default function HomePage() {
           </Link>
         </section>
 
-        {/* FOOTER */}
-        <footer className="mt-7 flex items-center justify-between border-t border-[#071827]/10 pt-5">
-          <span className="text-[9px] font-black tracking-[0.16em] text-[#071827]/30">
-            PADEL LEAGUE
-          </span>
+        <footer className="mt-6 flex items-center justify-between border-t border-[#071827]/10 pt-5">
+          <div className="flex items-center gap-3">
+            <span className="text-[9px] font-black tracking-[0.16em] text-[#071827]/40">
+              EQUIPO
+            </span>
+
+            <span className="text-[8px] font-black tracking-[0.16em] text-[#071827]/20">
+              PLAY TOGETHER
+            </span>
+          </div>
 
           <div className="flex items-center gap-5">
             <Link
@@ -344,13 +316,61 @@ export default function HomePage() {
   );
 }
 
-function Logo() {
+function EquipoLogo({
+  className = "",
+}: {
+  className?: string;
+}) {
   return (
-    <div className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d8ff45]">
-      <div className="h-5 w-3 rotate-[28deg] rounded-[50%] border-2 border-[#d8ff45]" />
+    <svg
+      viewBox="0 0 100 100"
+      className={className}
+      role="img"
+      aria-label="EQUIPO"
+    >
+      <path
+        d="M76 15H48C27 15 14 29 14 50C14 71 27 85 48 85H76L70 71H49C36 71 29 63 29 50C29 37 36 29 49 29H70L76 15Z"
+        fill="#d8ff45"
+      />
 
-      <div className="absolute bottom-[6px] right-[8px] h-[7px] w-[2px] rotate-[-32deg] bg-[#d8ff45]" />
-    </div>
+      <rect
+        x="24"
+        y="45"
+        width="18"
+        height="10"
+        rx="2"
+        fill="#d8ff45"
+      />
+
+      <circle cx="49" cy="37" r="2.8" fill="#d8ff45" />
+      <circle cx="59" cy="37" r="2.8" fill="#d8ff45" />
+
+      <circle cx="49" cy="47" r="2.8" fill="#d8ff45" />
+      <circle cx="59" cy="47" r="2.8" fill="#d8ff45" />
+      <circle cx="69" cy="47" r="2.8" fill="#d8ff45" />
+
+      <circle cx="49" cy="57" r="2.8" fill="#d8ff45" />
+      <circle cx="59" cy="57" r="2.8" fill="#d8ff45" />
+      <circle cx="69" cy="57" r="2.8" fill="#d8ff45" />
+
+      <circle cx="83" cy="48" r="9" fill="#d8ff45" />
+
+      <path
+        d="M80 40C76 44 76 52 80 56"
+        fill="none"
+        stroke="#0b2638"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M86 40C90 44 90 52 86 56"
+        fill="none"
+        stroke="#0b2638"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 }
 
@@ -362,7 +382,7 @@ function HeroStat({
   label: string;
 }) {
   return (
-    <div className="border-r border-white/10 px-3 first:pl-0 last:border-r-0 sm:px-5">
+    <div className="border-r border-white/10 px-3 last:border-r-0 sm:px-5">
       <p className="text-xl font-black tracking-[-0.04em] text-[#d8ff45]">
         {value}
       </p>

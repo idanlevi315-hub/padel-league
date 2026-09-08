@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Padel League",
-  description: "Community padel league.",
+  title: "EQUIPO | Padel Community",
+  description:
+    "EQUIPO is a padel community for weekly matches, competition and connection.",
 };
 
 export default function RootLayout({

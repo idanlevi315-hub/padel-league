@@ -11,8 +11,6 @@ export default function HomePage() {
       ? {
           rules: "REGLAMENTO",
           registrationOpen: "INSCRIPCIÓN ABIERTA",
-          subtitle:
-            "Partidos semanales. Dos grupos. Una comunidad.",
           register: "INSCRIBIR PAREJA",
           standings: "CLASIFICACIÓN",
 
@@ -29,7 +27,7 @@ export default function HomePage() {
           playoffsTitle: "Playoffs",
           playoffsText: "Cuadro del campeonato",
 
-          formatLabel: "FORMATO DE LA LIGA",
+          formatLabel: "FORMATO",
           formatTitle: "Temporada",
 
           stage1: "Fase de grupos",
@@ -44,18 +42,11 @@ export default function HomePage() {
           stage3Text:
             "Cuartos de final, semifinales y final.",
 
-          joinLabel: "INSCRIPCIÓN",
-          joinTitle: "Únete a EQUIPO.",
-          joinText:
-            "Registra tu pareja y forma parte de la comunidad.",
-
           admin: "ADMIN",
         }
       : {
           rules: "RULES",
           registrationOpen: "REGISTRATION OPEN",
-          subtitle:
-            "Weekly matches. Two groups. One community.",
           register: "REGISTER TEAM",
           standings: "STANDINGS",
 
@@ -72,7 +63,7 @@ export default function HomePage() {
           playoffsTitle: "Playoffs",
           playoffsText: "Championship bracket",
 
-          formatLabel: "LEAGUE FORMAT",
+          formatLabel: "FORMAT",
           formatTitle: "Season",
 
           stage1: "Group Stage",
@@ -87,16 +78,12 @@ export default function HomePage() {
           stage3Text:
             "Quarterfinals, semifinals and final.",
 
-          joinLabel: "REGISTRATION",
-          joinTitle: "Join EQUIPO.",
-          joinText:
-            "Register your team and become part of the community.",
-
           admin: "ADMIN",
         };
 
   return (
     <main className="bg-[#f4f2ea] text-[#071827]">
+      {/* HERO */}
       <section className="relative overflow-hidden bg-[#0b2638] text-white">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -left-28 top-20 h-72 w-72 rotate-[28deg] rounded-[60px] border border-[#d8ff45]/15" />
@@ -107,6 +94,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative mx-auto max-w-5xl px-5 pb-8 pt-4">
+          {/* HEADER */}
           <header className="grid grid-cols-3 items-start">
             <div className="flex justify-start pt-2">
               <Link
@@ -117,6 +105,7 @@ export default function HomePage() {
               </Link>
             </div>
 
+            {/* LOGO */}
             <Link
               href="/"
               className="flex flex-col items-center justify-center"
@@ -132,6 +121,7 @@ export default function HomePage() {
               </div>
             </Link>
 
+            {/* LANGUAGE */}
             <div className="flex justify-end pt-1">
               <div className="flex rounded-full border border-white/15 bg-white/[0.05] p-1">
                 <button
@@ -161,7 +151,8 @@ export default function HomePage() {
             </div>
           </header>
 
-          <div className="mx-auto mt-6 max-w-2xl text-center">
+          {/* ACTIONS */}
+          <div className="mx-auto mt-7 max-w-xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5">
               <span className="h-2 w-2 rounded-full bg-[#d8ff45]" />
 
@@ -170,11 +161,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <p className="mx-auto mt-4 max-w-md text-[14px] leading-6 text-white/60">
-              {copy.subtitle}
-            </p>
-
-            <div className="mx-auto mt-6 grid max-w-xl gap-3 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <Link
                 href="/join"
                 className="flex min-h-[52px] items-center justify-between rounded-full bg-[#d8ff45] px-6 text-[12px] font-black text-[#071827] transition hover:scale-[1.01]"
@@ -192,6 +179,7 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/* STATS */}
           <div className="mx-auto mt-7 grid max-w-xl grid-cols-3 border-t border-white/15 pt-5">
             <HeroStat value="2" label={copy.groups} />
             <HeroStat value="3" label={copy.pointsWin} />
@@ -201,6 +189,7 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-5xl px-5 pb-10">
+        {/* MAIN LINKS */}
         <section className="-mt-px grid overflow-hidden rounded-b-[24px] bg-white shadow-[0_14px_40px_rgba(7,24,39,0.07)] sm:grid-cols-3">
           <HomeLink
             number="01"
@@ -224,6 +213,7 @@ export default function HomePage() {
           />
         </section>
 
+        {/* FORMAT */}
         <section className="py-9 sm:py-11">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
             <div className="shrink-0 md:w-[200px]">
@@ -258,33 +248,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden rounded-[25px] bg-[#d8ff45] px-6 py-6 sm:flex sm:items-center sm:justify-between sm:px-8">
-          <div className="absolute -bottom-16 -right-10 h-44 w-44 rounded-full border-[28px] border-[#071827]/5" />
-
-          <div className="relative">
-            <p className="text-[9px] font-black tracking-[0.2em] text-[#071827]/45">
-              {copy.joinLabel}
-            </p>
-
-            <h2 className="mt-1 text-2xl font-black tracking-[-0.04em]">
-              {copy.joinTitle}
-            </h2>
-
-            <p className="mt-1 text-[13px] text-[#071827]/60">
-              {copy.joinText}
-            </p>
-          </div>
-
-          <Link
-            href="/join"
-            className="relative mt-5 inline-flex min-h-[46px] items-center gap-7 rounded-full bg-[#071827] px-5 text-[11px] font-black text-white sm:mt-0"
-          >
-            {copy.register}
-            <span>→</span>
-          </Link>
-        </section>
-
-        <footer className="mt-6 flex items-center justify-between border-t border-[#071827]/10 pt-5">
+        {/* FOOTER */}
+        <footer className="flex items-center justify-between border-t border-[#071827]/10 pt-5">
           <div className="flex items-center gap-3">
             <span className="text-[9px] font-black tracking-[0.16em] text-[#071827]/40">
               EQUIPO

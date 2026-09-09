@@ -22,12 +22,14 @@ export default function BottomNav() {
           standings: "Clasificación",
           matches: "Partidos",
           playoffs: "Playoffs",
+          community: "Comunidad",
         }
       : {
           home: "Home",
           standings: "Standings",
           matches: "Matches",
           playoffs: "Playoffs",
+          community: "Community",
         };
 
   const items = [
@@ -51,11 +53,16 @@ export default function BottomNav() {
       label: labels.playoffs,
       icon: PlayoffsIcon,
     },
+    {
+      href: "/community",
+      label: labels.community,
+      icon: CommunityIcon,
+    },
   ];
 
   return (
-    <nav className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-24px)] max-w-[440px] -translate-x-1/2">
-      <div className="grid grid-cols-4 rounded-[22px] border border-white/10 bg-[#0b2638]/95 p-2 shadow-[0_18px_50px_rgba(7,24,39,0.28)] backdrop-blur-xl">
+    <nav className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-24px)] max-w-[520px] -translate-x-1/2">
+      <div className="grid grid-cols-5 rounded-[22px] border border-white/10 bg-[#0b2638]/95 p-2 shadow-[0_18px_50px_rgba(7,24,39,0.28)] backdrop-blur-xl">
         {items.map((item) => {
           const active =
             item.href === "/"
@@ -76,7 +83,7 @@ export default function BottomNav() {
             >
               <Icon active={active} />
 
-              <span className="max-w-full truncate px-1 text-[9px] font-black tracking-[0.06em]">
+              <span className="max-w-full truncate px-1 text-[8px] font-black tracking-[0.04em] sm:text-[9px] sm:tracking-[0.06em]">
                 {item.label.toUpperCase()}
               </span>
             </Link>
@@ -187,6 +194,30 @@ function PlayoffsIcon({
       <path d="M12 12v5" />
       <path d="M8 20h8" />
       <path d="M9 17h6" />
+    </svg>
+  );
+}
+
+function CommunityIcon({
+  active,
+}: {
+  active: boolean;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={active ? 2.2 : 1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3.5 19c.6-3.2 2.5-5 5.5-5s4.9 1.8 5.5 5" />
+
+      <circle cx="17" cy="9" r="2.3" />
+      <path d="M15.5 14.5c2.8-.4 4.6 1.1 5 3.5" />
     </svg>
   );
 }

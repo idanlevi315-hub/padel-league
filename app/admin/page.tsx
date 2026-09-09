@@ -6,35 +6,42 @@ const adminSections = [
     description:
       "Registrations, waiting list and group assignments.",
     href: "/admin/teams",
-    icon: "👥",
+    icon: "T",
   },
   {
     title: "Matches",
     description:
       "Create the group schedule and manage matches.",
     href: "/admin/matches",
-    icon: "🎾",
+    icon: "M",
   },
   {
     title: "Results",
     description:
       "Review pending or disputed match results.",
     href: "/admin/results",
-    icon: "✓",
+    icon: "R",
   },
   {
     title: "Playoffs",
     description:
       "Create and manage the championship bracket.",
     href: "/admin/playoff",
-    icon: "🏆",
+    icon: "P",
+  },
+  {
+    title: "Community Chat",
+    description:
+      "Moderate messages and clear the community chat.",
+    href: "/admin/community",
+    icon: "C",
   },
   {
     title: "League Settings",
     description:
       "Capacity, registration and season status.",
     href: "/admin/settings",
-    icon: "⚙️",
+    icon: "S",
   },
 ];
 
@@ -42,8 +49,8 @@ export default function AdminPage() {
   return (
     <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
       <div className="mx-auto max-w-2xl">
-        <p className="text-sm font-black tracking-widest text-lime-300">
-          PADEL LEAGUE
+        <p className="text-sm font-black tracking-[0.2em] text-[#d8ff45]">
+          EQUIPO
         </p>
 
         <h1 className="mt-2 text-3xl font-black">
@@ -62,9 +69,9 @@ export default function AdminPage() {
               className="group rounded-3xl bg-white p-5 text-black shadow-lg transition hover:-translate-y-1"
             >
               <div className="flex items-start justify-between">
-                <span className="text-3xl">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0b2638] text-sm font-black text-[#d8ff45]">
                   {section.icon}
-                </span>
+                </div>
 
                 <span className="text-xl text-gray-300 transition group-hover:text-black">
                   →
@@ -82,12 +89,12 @@ export default function AdminPage() {
           ))}
         </div>
 
-        <section className="mt-8 rounded-3xl border border-lime-300/20 bg-lime-300/10 p-5">
-          <p className="text-xs font-black tracking-widest text-lime-300">
+        <section className="mt-8 rounded-3xl border border-[#d8ff45]/20 bg-[#d8ff45]/10 p-5">
+          <p className="text-xs font-black tracking-widest text-[#d8ff45]">
             PUBLIC LEAGUE
           </p>
 
-          <div className="mt-4 grid grid-cols-3 gap-3">
+          <div className="mt-4 grid grid-cols-4 gap-3">
             <PublicLink
               href="/league"
               label="Standings"
@@ -101,6 +108,11 @@ export default function AdminPage() {
             <PublicLink
               href="/playoffs"
               label="Playoffs"
+            />
+
+            <PublicLink
+              href="/community"
+              label="Community"
             />
           </div>
         </section>

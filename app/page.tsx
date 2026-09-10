@@ -30,11 +30,8 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto flex min-h-[660px] max-w-[1500px] items-center px-6 pb-20 sm:px-10 lg:px-16">
           <div className="max-w-[540px]">
             <div className="text-[58px] font-bold leading-none tracking-[-0.055em] sm:text-[68px]">18</div>
-            <h1 className="mt-2 text-[46px] font-semibold leading-[0.96] tracking-[-0.045em] sm:text-[58px] lg:text-[66px]">
-              {es ? <>Más que<br />un partido</> : <>More than<br />a game</>}
-            </h1>
 
-            <p className="mt-5 text-[13px] font-semibold tracking-[.12em] sm:text-[14px]">
+            <p className="mt-4 text-[13px] font-semibold tracking-[.12em] sm:text-[14px]">
               {es ? "Comunidad de pádel · Barcelona" : "Padel community · Barcelona"}
             </p>
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function RegistrationSuccessPage() {
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#24372f] px-5 py-8 text-white">
       <div className="mx-auto max-w-md">
         <div className="flex min-h-[75vh] flex-col justify-center">
 
@@ -11,12 +11,12 @@ export default function RegistrationSuccessPage() {
             <div className="relative mx-auto h-28 w-28">
               <div className="absolute inset-0 rounded-full bg-lime-300/30 blur-2xl" />
 
-              <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-lime-300 shadow-[0_0_35px_rgba(190,242,100,0.65)]">
+              <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-lime-300 shadow-none">
                 <div className="absolute -left-5 top-1 h-24 w-16 rotate-12 rounded-full border-r-[5px] border-white/90" />
 
                 <div className="absolute -right-5 bottom-1 h-24 w-16 rotate-12 rounded-full border-l-[5px] border-white/90" />
 
-                <span className="relative z-10 text-5xl font-black text-[#071827]">
+                <span className="relative z-10 text-5xl font-black text-[#24372f]">
                   ✓
                 </span>
               </div>

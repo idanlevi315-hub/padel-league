@@ -347,9 +347,9 @@ export default function PlayoffsPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+      <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
         <div className="mx-auto max-w-7xl px-5 py-10">
-          <p className="text-sm font-bold text-[#78909c]">
+          <p className="text-sm font-bold text-[#7a847e]">
             Loading playoffs...
           </p>
         </div>
@@ -358,15 +358,15 @@ export default function PlayoffsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
       <div className="mx-auto max-w-7xl px-5 pb-28 pt-7">
 
-        <header className="flex items-center justify-between border-b border-[#071827]/10 pb-5">
+        <header className="flex items-center justify-between border-b border-[#24372f]/10 pb-5">
           <Link
             href="/"
             className="flex items-center gap-3"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2638] text-xs font-black text-[#d8ff45]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5f6b64] text-xs font-black text-[#d9ef54]">
               P
             </div>
 
@@ -375,7 +375,7 @@ export default function PlayoffsPage() {
                 PADEL
               </p>
 
-              <p className="text-[9px] font-bold tracking-[0.34em] text-[#78909c]">
+              <p className="text-[9px] font-bold tracking-[0.34em] text-[#7a847e]">
                 LEAGUE
               </p>
             </div>
@@ -383,14 +383,14 @@ export default function PlayoffsPage() {
 
           <Link
             href="/matches"
-            className="rounded-full bg-[#0b2638] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
+            className="rounded-full bg-[#5f6b64] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
           >
             MATCHES
           </Link>
         </header>
 
         <section className="pt-9">
-          <p className="text-[10px] font-black tracking-[0.24em] text-[#78909c]">
+          <p className="text-[10px] font-black tracking-[0.24em] text-[#7a847e]">
             CHAMPIONSHIP
           </p>
 
@@ -400,7 +400,7 @@ export default function PlayoffsPage() {
                 PLAYOFFS
               </h1>
 
-              <p className="mt-3 text-sm font-bold text-[#78909c]">
+              <p className="mt-3 text-sm font-bold text-[#7a847e]">
                 Quarterfinals → Semifinals → Final →
                 Champion
               </p>
@@ -427,12 +427,12 @@ export default function PlayoffsPage() {
         </section>
 
         {message && (
-          <div className="mt-8 rounded-[24px] bg-[#fff0ee] p-5 text-sm font-bold text-[#b42318]">
+          <div className="mt-8 rounded-[14px] bg-[#fff0ee] p-5 text-sm font-bold text-[#b42318]">
             {message}
           </div>
         )}
 
-        <section className="mt-9 rounded-[28px] bg-[#0b2638] p-4 md:p-6">
+        <section className="mt-9 rounded-[16px] bg-[#5f6b64] p-4 md:p-6">
           <div className="mb-5 flex items-center justify-between gap-4">
             <div>
               <p className="text-[10px] font-black tracking-[0.2em] text-white/40">
@@ -444,7 +444,7 @@ export default function PlayoffsPage() {
               </p>
             </div>
 
-            <div className="rounded-full bg-[#d8ff45] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-[#071827]">
+            <div className="rounded-full bg-[#d9ef54] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-[#24372f]">
               TOP 4 EACH GROUP
             </div>
           </div>
@@ -618,7 +618,7 @@ export default function PlayoffsPage() {
 
                 {/* FINAL CONNECTOR */}
                 <div className="flex h-[760px] items-center">
-                  <div className="w-full border-t-2 border-[#d8ff45]" />
+                  <div className="w-full border-t-2 border-[#d9ef54]" />
                 </div>
 
                 {/* CHAMPION */}
@@ -789,8 +789,8 @@ export default function PlayoffsPage() {
 
         <section className="mt-8 grid gap-5 md:grid-cols-[1.4fr_1fr]">
 
-          <div className="rounded-[28px] bg-white p-6 shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-            <p className="text-[10px] font-black tracking-[0.2em] text-[#78909c]">
+          <div className="rounded-[16px] bg-white p-6 shadow-none">
+            <p className="text-[10px] font-black tracking-[0.2em] text-[#7a847e]">
               QUALIFICATION
             </p>
 
@@ -798,7 +798,7 @@ export default function PlayoffsPage() {
               Top four from each group
             </h2>
 
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#78909c]">
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#7a847e]">
               The final group standings determine the
               eight playoff seeds. Group A and Group B
               cross in the quarterfinals.
@@ -812,8 +812,8 @@ export default function PlayoffsPage() {
             </div>
           </div>
 
-          <div className="rounded-[28px] bg-[#d8ff45] p-6">
-            <p className="text-[10px] font-black tracking-[0.2em] text-[#071827]/50">
+          <div className="rounded-[16px] bg-[#d9ef54] p-6">
+            <p className="text-[10px] font-black tracking-[0.2em] text-[#24372f]/50">
               CHAMPIONSHIP EVENT
             </p>
 
@@ -830,17 +830,17 @@ export default function PlayoffsPage() {
           </div>
         </section>
 
-        <footer className="mt-10 flex items-center justify-between border-t border-[#071827]/10 pt-5">
+        <footer className="mt-10 flex items-center justify-between border-t border-[#24372f]/10 pt-5">
           <Link
             href="/matches"
-            className="text-xs font-black tracking-[0.12em] text-[#78909c]"
+            className="text-xs font-black tracking-[0.12em] text-[#7a847e]"
           >
             ← MATCHES
           </Link>
 
           <Link
             href="/league"
-            className="text-xs font-black tracking-[0.12em] text-[#071827]"
+            className="text-xs font-black tracking-[0.12em] text-[#24372f]"
           >
             STANDINGS →
           </Link>
@@ -863,7 +863,7 @@ function StageStat({
     <div
       className={`rounded-[18px] px-4 py-3 ${
         highlight
-          ? "bg-[#d8ff45]"
+          ? "bg-[#d9ef54]"
           : "bg-white"
       }`}
     >
@@ -874,8 +874,8 @@ function StageStat({
       <p
         className={`mt-1 text-[8px] font-black tracking-[0.16em] ${
           highlight
-            ? "text-[#071827]/50"
-            : "text-[#78909c]"
+            ? "text-[#24372f]/50"
+            : "text-[#7a847e]"
         }`}
       >
         {label}
@@ -917,14 +917,14 @@ function MatchCard({
     match?.result_status === "confirmed";
 
   return (
-    <div className="w-full rounded-[18px] bg-white p-3 text-[#071827] shadow-[0_12px_28px_rgba(0,0,0,0.14)]">
+    <div className="w-full rounded-[18px] bg-white p-3 text-[#24372f] shadow-none">
       <div className="mb-2 flex items-center justify-between">
-        <p className="text-[9px] font-black tracking-[0.15em] text-[#78909c]">
+        <p className="text-[9px] font-black tracking-[0.15em] text-[#7a847e]">
           {code}
         </p>
 
         {confirmed && (
-          <span className="rounded-full bg-[#d8ff45] px-2 py-0.5 text-[8px] font-black tracking-[0.08em]">
+          <span className="rounded-full bg-[#d9ef54] px-2 py-0.5 text-[8px] font-black tracking-[0.08em]">
             FINAL
           </span>
         )}
@@ -936,7 +936,7 @@ function MatchCard({
         winner={match?.winner === team1}
       />
 
-      <div className="my-2 border-t border-[#071827]/10" />
+      <div className="my-2 border-t border-[#24372f]/10" />
 
       <TeamRow
         seed={seed2}
@@ -945,7 +945,7 @@ function MatchCard({
       />
 
       {score && (
-        <div className="mt-2 rounded-[10px] bg-[#f4f2ea] px-2 py-1.5 text-center">
+        <div className="mt-2 rounded-[10px] bg-[#eee9df] px-2 py-1.5 text-center">
           <p className="text-[11px] font-black">
             {score}
           </p>
@@ -972,13 +972,13 @@ function FutureMatchCard({
 }) {
   return (
     <div
-      className={`w-full rounded-[18px] bg-white p-3 text-[#071827] shadow-[0_12px_28px_rgba(0,0,0,0.14)] ${
+      className={`w-full rounded-[18px] bg-white p-3 text-[#24372f] shadow-none ${
         final
-          ? "ring-2 ring-[#d8ff45]"
+          ? "ring-2 ring-[#d9ef54]"
           : ""
       }`}
     >
-      <p className="mb-2 text-center text-[9px] font-black tracking-[0.15em] text-[#78909c]">
+      <p className="mb-2 text-center text-[9px] font-black tracking-[0.15em] text-[#7a847e]">
         {code}
       </p>
 
@@ -987,7 +987,7 @@ function FutureMatchCard({
         winner={match?.winner === team1}
       />
 
-      <div className="my-2 border-t border-[#071827]/10" />
+      <div className="my-2 border-t border-[#24372f]/10" />
 
       <FutureTeam
         name={team2}
@@ -995,7 +995,7 @@ function FutureMatchCard({
       />
 
       {score && (
-        <div className="mt-2 rounded-[10px] bg-[#f4f2ea] px-2 py-1.5 text-center">
+        <div className="mt-2 rounded-[10px] bg-[#eee9df] px-2 py-1.5 text-center">
           <p className="text-[11px] font-black">
             {score}
           </p>
@@ -1018,20 +1018,20 @@ function TeamRow({
 
   return (
     <div className="flex min-w-0 items-center gap-2">
-      <span className="flex h-7 min-w-9 items-center justify-center rounded-[8px] bg-[#d8ff45] px-2 text-[10px] font-black">
+      <span className="flex h-7 min-w-9 items-center justify-center rounded-[8px] bg-[#d9ef54] px-2 text-[10px] font-black">
         {seed}
       </span>
 
       <span
         className={`min-w-0 flex-1 truncate text-[12px] font-black ${
-          isTbd ? "text-[#78909c]" : ""
+          isTbd ? "text-[#7a847e]" : ""
         }`}
       >
         {name}
       </span>
 
       {winner && (
-        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#d8ff45] text-[10px] font-black">
+        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#d9ef54] text-[10px] font-black">
           ✓
         </span>
       )}
@@ -1052,11 +1052,11 @@ function FutureTeam({
     <div
       className={`flex min-w-0 items-center rounded-[11px] px-3 py-2 text-[12px] font-black ${
         winner
-          ? "bg-[#d8ff45]"
-          : "bg-[#f4f2ea]"
+          ? "bg-[#d9ef54]"
+          : "bg-[#eee9df]"
       } ${
         future
-          ? "text-[#78909c]"
+          ? "text-[#7a847e]"
           : ""
       }`}
     >
@@ -1079,13 +1079,13 @@ function ChampionCard({
   champion: string;
 }) {
   return (
-    <div className="w-full min-w-0 rounded-[20px] bg-[#d8ff45] p-4 text-center text-[#071827] shadow-[0_16px_35px_rgba(0,0,0,0.18)]">
-      <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#071827]">
+    <div className="w-full min-w-0 rounded-[20px] bg-[#d9ef54] p-4 text-center text-[#24372f] shadow-none">
+      <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#24372f]">
         <svg
           viewBox="0 0 24 24"
           className="h-6 w-6"
           fill="none"
-          stroke="#d8ff45"
+          stroke="#d9ef54"
           strokeWidth="1.8"
         >
           <path d="M8 4h8v4a4 4 0 0 1-8 0V4Z" />
@@ -1097,7 +1097,7 @@ function ChampionCard({
         </svg>
       </div>
 
-      <p className="mt-3 text-[9px] font-black tracking-[0.18em] text-[#071827]/50">
+      <p className="mt-3 text-[9px] font-black tracking-[0.18em] text-[#24372f]/50">
         CHAMPION
       </p>
 
@@ -1120,13 +1120,13 @@ function BracketConnector({
       className="absolute left-0 w-full"
       style={{ top, height }}
     >
-      <div className="absolute left-0 top-0 w-1/2 border-t-2 border-[#d8ff45]/35" />
+      <div className="absolute left-0 top-0 w-1/2 border-t-2 border-[#d9ef54]/35" />
 
-      <div className="absolute bottom-0 left-0 w-1/2 border-t-2 border-[#d8ff45]/35" />
+      <div className="absolute bottom-0 left-0 w-1/2 border-t-2 border-[#d9ef54]/35" />
 
-      <div className="absolute bottom-0 left-1/2 top-0 border-r-2 border-[#d8ff45]/35" />
+      <div className="absolute bottom-0 left-1/2 top-0 border-r-2 border-[#d9ef54]/35" />
 
-      <div className="absolute left-1/2 top-1/2 w-1/2 border-t-2 border-[#d8ff45]/35" />
+      <div className="absolute left-1/2 top-1/2 w-1/2 border-t-2 border-[#d9ef54]/35" />
     </div>
   );
 }
@@ -1135,8 +1135,8 @@ function DownArrow() {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col items-center">
-        <div className="h-7 w-px bg-[#d8ff45]/50" />
-        <div className="h-2 w-2 rotate-45 border-b-2 border-r-2 border-[#d8ff45]/50" />
+        <div className="h-7 w-px bg-[#d9ef54]/50" />
+        <div className="h-2 w-2 rotate-45 border-b-2 border-r-2 border-[#d9ef54]/50" />
       </div>
     </div>
   );
@@ -1150,16 +1150,16 @@ function SeedPair({
   right: string;
 }) {
   return (
-    <div className="flex items-center justify-between rounded-[16px] bg-[#f4f2ea] px-4 py-3">
-      <span className="rounded-[9px] bg-[#0b2638] px-2.5 py-1 text-xs font-black text-[#d8ff45]">
+    <div className="flex items-center justify-between rounded-[16px] bg-[#eee9df] px-4 py-3">
+      <span className="rounded-[9px] bg-[#5f6b64] px-2.5 py-1 text-xs font-black text-[#d9ef54]">
         {left}
       </span>
 
-      <span className="text-xs font-black text-[#78909c]">
+      <span className="text-xs font-black text-[#7a847e]">
         VS
       </span>
 
-      <span className="rounded-[9px] bg-[#0b2638] px-2.5 py-1 text-xs font-black text-[#d8ff45]">
+      <span className="rounded-[9px] bg-[#5f6b64] px-2.5 py-1 text-xs font-black text-[#d9ef54]">
         {right}
       </span>
     </div>
@@ -1172,8 +1172,8 @@ function EventLine({
   text: string;
 }) {
   return (
-    <div className="flex items-center gap-3 border-b border-[#071827]/10 pb-3 last:border-b-0 last:pb-0">
-      <div className="h-2 w-2 rounded-full bg-[#071827]" />
+    <div className="flex items-center gap-3 border-b border-[#24372f]/10 pb-3 last:border-b-0 last:pb-0">
+      <div className="h-2 w-2 rounded-full bg-[#24372f]" />
 
       <p className="text-sm font-black">
         {text}

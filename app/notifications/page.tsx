@@ -17,7 +17,7 @@ export default function NotificationsPage() {
     ? {
         back: "INICIO",
         title: "Notificaciones",
-        text: "Activa las notificaciones para recibir avisos de EQUIPO.",
+        text: "Activa las notificaciones para recibir avisos de 18.",
         enable: "ACTIVAR NOTIFICACIONES",
         enabled: "NOTIFICACIONES ACTIVADAS",
         blocked: "LAS NOTIFICACIONES ESTÁN BLOQUEADAS",
@@ -28,7 +28,7 @@ export default function NotificationsPage() {
     : {
         back: "HOME",
         title: "Notifications",
-        text: "Enable notifications to receive EQUIPO updates.",
+        text: "Enable notifications to receive 18 updates.",
         enable: "ENABLE NOTIFICATIONS",
         enabled: "NOTIFICATIONS ENABLED",
         blocked: "NOTIFICATIONS ARE BLOCKED",
@@ -69,7 +69,7 @@ export default function NotificationsPage() {
 
     try {
       const registration = await navigator.serviceWorker.ready;
-      await registration.showNotification("EQUIPO", {
+      await registration.showNotification("18", {
         body: "Notifications are working on this device.",
         icon: "/equipo-icon.svg",
         badge: "/equipo-icon.svg",
@@ -94,18 +94,18 @@ export default function NotificationsPage() {
           : copy.enable;
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] px-5 py-8 text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
       <div className="mx-auto max-w-md">
         <Link
           href="/"
-          className="text-[9px] font-black tracking-[0.14em] text-[#78909c]"
+          className="text-[9px] font-black tracking-[0.14em] text-[#7a847e]"
         >
           ← {copy.back}
         </Link>
 
-        <div className="mt-7 rounded-[28px] bg-[#0b2638] p-7 text-white">
-          <p className="text-[10px] font-black tracking-[0.22em] text-[#d8ff45]">
-            EQUIPO
+        <div className="mt-7 rounded-[16px] bg-[#5f6b64] p-7 text-white">
+          <p className="text-[10px] font-black tracking-[0.22em] text-[#d9ef54]">
+            18
           </p>
           <h1 className="mt-3 text-3xl font-black tracking-[-0.05em]">
             {copy.title}
@@ -119,7 +119,7 @@ export default function NotificationsPage() {
               <span className="text-[10px] font-black tracking-[0.12em] text-white/40">
                 STATUS
               </span>
-              <span className="text-right text-[10px] font-black text-[#d8ff45]">
+              <span className="text-right text-[10px] font-black text-[#d9ef54]">
                 {statusText}
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function NotificationsPage() {
               type="button"
               onClick={enableNotifications}
               disabled={working}
-              className="mt-4 w-full rounded-[18px] bg-[#d8ff45] px-5 py-4 text-[10px] font-black text-[#071827] disabled:opacity-40"
+              className="mt-4 w-full rounded-[18px] bg-[#d9ef54] px-5 py-4 text-[10px] font-black text-[#24372f] disabled:opacity-40"
             >
               {working ? "..." : copy.enable}
             </button>
@@ -141,14 +141,14 @@ export default function NotificationsPage() {
               type="button"
               onClick={sendTestNotification}
               disabled={working}
-              className="mt-4 w-full rounded-[18px] bg-[#d8ff45] px-5 py-4 text-[10px] font-black text-[#071827] disabled:opacity-40"
+              className="mt-4 w-full rounded-[18px] bg-[#d9ef54] px-5 py-4 text-[10px] font-black text-[#24372f] disabled:opacity-40"
             >
               {working ? "..." : copy.test}
             </button>
           )}
 
           {message && (
-            <p className="mt-4 text-center text-[11px] font-bold text-[#d8ff45]">
+            <p className="mt-4 text-center text-[11px] font-bold text-[#d9ef54]">
               {message}
             </p>
           )}

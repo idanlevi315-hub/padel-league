@@ -143,11 +143,11 @@ export default function MatchesPage() {
   }, [groupMatches]);
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
       <div className="mx-auto max-w-5xl px-5 pb-24 pt-7">
-        <header className="flex items-center justify-between border-b border-[#071827]/10 pb-5">
+        <header className="flex items-center justify-between border-b border-[#24372f]/10 pb-5">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2638] text-xs font-black text-[#d8ff45]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5f6b64] text-xs font-black text-[#d9ef54]">
               P
             </div>
 
@@ -156,7 +156,7 @@ export default function MatchesPage() {
                 PADEL
               </p>
 
-              <p className="text-[9px] font-bold tracking-[0.34em] text-[#78909c]">
+              <p className="text-[9px] font-bold tracking-[0.34em] text-[#7a847e]">
                 LEAGUE
               </p>
             </div>
@@ -164,14 +164,14 @@ export default function MatchesPage() {
 
           <Link
             href="/league"
-            className="rounded-full bg-[#0b2638] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
+            className="rounded-full bg-[#5f6b64] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
           >
             STANDINGS
           </Link>
         </header>
 
         <section className="pt-10">
-          <p className="text-[10px] font-black tracking-[0.24em] text-[#78909c]">
+          <p className="text-[10px] font-black tracking-[0.24em] text-[#7a847e]">
             CURRENT SEASON
           </p>
 
@@ -180,22 +180,22 @@ export default function MatchesPage() {
               MATCHES
             </h1>
 
-            <p className="pb-1 text-sm font-bold text-[#78909c]">
+            <p className="pb-1 text-sm font-bold text-[#7a847e]">
               {matches.length} total
             </p>
           </div>
         </section>
 
         {loading && (
-          <section className="mt-10 rounded-[24px] bg-white p-6 shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-            <p className="text-sm font-bold text-[#78909c]">
+          <section className="mt-10 rounded-[14px] bg-white p-6 shadow-none">
+            <p className="text-sm font-bold text-[#7a847e]">
               Loading matches...
             </p>
           </section>
         )}
 
         {message && (
-          <section className="mt-8 rounded-[24px] bg-[#fff0ee] p-5 text-sm font-bold text-[#b42318]">
+          <section className="mt-8 rounded-[14px] bg-[#fff0ee] p-5 text-sm font-bold text-[#b42318]">
             {message}
           </section>
         )}
@@ -205,7 +205,7 @@ export default function MatchesPage() {
             <section className="mt-10">
               <div className="flex items-end justify-between gap-5">
                 <div>
-                  <p className="text-[10px] font-black tracking-[0.2em] text-[#78909c]">
+                  <p className="text-[10px] font-black tracking-[0.2em] text-[#7a847e]">
                     GROUP STAGE
                   </p>
 
@@ -214,7 +214,7 @@ export default function MatchesPage() {
                   </h2>
                 </div>
 
-                <div className="rounded-full bg-white px-4 py-2 text-xs font-black text-[#78909c] shadow-[0_8px_24px_rgba(7,24,39,0.05)]">
+                <div className="rounded-full bg-white px-4 py-2 text-xs font-black text-[#7a847e] shadow-none">
                   {groupMatches.length}
                 </div>
               </div>
@@ -227,12 +227,12 @@ export default function MatchesPage() {
                     ([week, weekMatches]) => (
                       <section key={week}>
                         <div className="mb-4 flex items-center gap-3">
-                          <div className="flex h-9 min-w-9 items-center justify-center rounded-full bg-[#0b2638] px-3 text-xs font-black text-[#d8ff45]">
+                          <div className="flex h-9 min-w-9 items-center justify-center rounded-full bg-[#5f6b64] px-3 text-xs font-black text-[#d9ef54]">
                             {week}
                           </div>
 
                           <div>
-                            <p className="text-[10px] font-black tracking-[0.18em] text-[#78909c]">
+                            <p className="text-[10px] font-black tracking-[0.18em] text-[#7a847e]">
                               WEEK
                             </p>
 
@@ -257,10 +257,10 @@ export default function MatchesPage() {
               )}
             </section>
 
-            <section className="mt-14 border-t border-[#071827]/10 pt-10">
+            <section className="mt-14 border-t border-[#24372f]/10 pt-10">
               <div className="flex items-end justify-between gap-5">
                 <div>
-                  <p className="text-[10px] font-black tracking-[0.2em] text-[#78909c]">
+                  <p className="text-[10px] font-black tracking-[0.2em] text-[#7a847e]">
                     CHAMPIONSHIP
                   </p>
 
@@ -271,7 +271,7 @@ export default function MatchesPage() {
 
                 <Link
                   href="/playoffs"
-                  className="text-xs font-black tracking-[0.12em] text-[#071827]"
+                  className="text-xs font-black tracking-[0.12em] text-[#24372f]"
                 >
                   FULL BRACKET →
                 </Link>
@@ -296,7 +296,7 @@ export default function MatchesPage() {
               </div>
             </section>
 
-            <section className="mt-10 rounded-[28px] bg-[#0b2638] px-6 py-7 text-white">
+            <section className="mt-10 rounded-[16px] bg-[#5f6b64] px-6 py-7 text-white">
               <p className="text-[10px] font-black tracking-[0.2em] text-white/40">
                 RESULT PROCESS
               </p>
@@ -324,17 +324,17 @@ export default function MatchesPage() {
           </>
         )}
 
-        <footer className="mt-10 flex items-center justify-between border-t border-[#071827]/10 pt-5">
+        <footer className="mt-10 flex items-center justify-between border-t border-[#24372f]/10 pt-5">
           <Link
             href="/"
-            className="text-xs font-black tracking-[0.12em] text-[#78909c]"
+            className="text-xs font-black tracking-[0.12em] text-[#7a847e]"
           >
             ← HOME
           </Link>
 
           <Link
             href="/playoffs"
-            className="text-xs font-black tracking-[0.12em] text-[#071827]"
+            className="text-xs font-black tracking-[0.12em] text-[#24372f]"
           >
             PLAYOFFS →
           </Link>
@@ -355,10 +355,10 @@ function PlayoffRound({
 }) {
   return (
     <section
-      className={`rounded-[26px] p-5 ${
+      className={`rounded-[14px] p-5 ${
         finalRound
-          ? "bg-[#d8ff45]"
-          : "bg-white shadow-[0_14px_35px_rgba(7,24,39,0.06)]"
+          ? "bg-[#d9ef54]"
+          : "bg-white shadow-none"
       }`}
     >
       <div className="flex items-center justify-between gap-3">
@@ -366,8 +366,8 @@ function PlayoffRound({
           <p
             className={`text-[10px] font-black tracking-[0.18em] ${
               finalRound
-                ? "text-[#071827]/45"
-                : "text-[#78909c]"
+                ? "text-[#24372f]/45"
+                : "text-[#7a847e]"
             }`}
           >
             PLAYOFF ROUND
@@ -381,8 +381,8 @@ function PlayoffRound({
         <div
           className={`flex h-8 min-w-8 items-center justify-center rounded-full px-2 text-xs font-black ${
             finalRound
-              ? "bg-[#071827] text-white"
-              : "bg-[#f4f2ea] text-[#78909c]"
+              ? "bg-[#24372f] text-white"
+              : "bg-[#eee9df] text-[#7a847e]"
           }`}
         >
           {matches.length}
@@ -393,8 +393,8 @@ function PlayoffRound({
         <div
           className={`mt-5 border-t pt-5 text-sm ${
             finalRound
-              ? "border-[#071827]/15 text-[#071827]/50"
-              : "border-[#071827]/8 text-[#78909c]"
+              ? "border-[#24372f]/15 text-[#24372f]/50"
+              : "border-[#24372f]/8 text-[#7a847e]"
           }`}
         >
           Not created yet
@@ -440,14 +440,14 @@ function MatchCard({
 
   return (
     <div
-      className={`rounded-[24px] bg-white ${
+      className={`rounded-[14px] bg-white ${
         compact
-          ? "border border-[#071827]/8 p-4 shadow-none"
-          : "p-5 shadow-[0_14px_35px_rgba(7,24,39,0.06)]"
+          ? "border border-[#24372f]/8 p-4 shadow-none"
+          : "p-5 shadow-none"
       }`}
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[10px] font-black tracking-[0.16em] text-[#78909c]">
+        <p className="text-[10px] font-black tracking-[0.16em] text-[#7a847e]">
           {playoff
             ? playoffLabel(match)
             : `WEEK ${match.week ?? "-"}`}
@@ -465,7 +465,7 @@ function MatchCard({
           }
         />
 
-        <div className="my-4 border-t border-[#071827]/8" />
+        <div className="my-4 border-t border-[#24372f]/8" />
 
         <TeamLine
           name={match.team2}
@@ -477,8 +477,8 @@ function MatchCard({
       </div>
 
       {score && (
-        <div className="mt-5 rounded-[16px] bg-[#f4f2ea] px-4 py-3">
-          <p className="text-[9px] font-black tracking-[0.18em] text-[#78909c]">
+        <div className="mt-5 rounded-[16px] bg-[#eee9df] px-4 py-3">
+          <p className="text-[9px] font-black tracking-[0.18em] text-[#7a847e]">
             SCORE
           </p>
 
@@ -491,7 +491,7 @@ function MatchCard({
       {scheduled && (
         <Link
           href={`/result?id=${match.id}`}
-          className="mt-5 block rounded-[14px] bg-[#d8ff45] px-4 py-3 text-center text-sm font-black text-[#071827]"
+          className="mt-5 block rounded-[14px] bg-[#d9ef54] px-4 py-3 text-center text-sm font-black text-[#24372f]"
         >
           ENTER RESULT
         </Link>
@@ -505,7 +505,7 @@ function MatchCard({
 
           <Link
             href={`/confirm-result?id=${match.id}`}
-            className="mt-3 block rounded-[14px] bg-[#0b2638] px-4 py-3 text-center text-sm font-black text-white"
+            className="mt-3 block rounded-[14px] bg-[#5f6b64] px-4 py-3 text-center text-sm font-black text-white"
           >
             CONFIRM RESULT
           </Link>
@@ -541,7 +541,7 @@ function TeamLine({
       </span>
 
       {winner && (
-        <span className="shrink-0 rounded-full bg-[#d8ff45] px-3 py-1 text-[10px] font-black tracking-[0.1em]">
+        <span className="shrink-0 rounded-full bg-[#d9ef54] px-3 py-1 text-[10px] font-black tracking-[0.1em]">
           WINNER
         </span>
       )}
@@ -556,7 +556,7 @@ function StatusBadge({
 }) {
   let text = "Scheduled";
   let className =
-    "bg-[#f4f2ea] text-[#78909c]";
+    "bg-[#eee9df] text-[#7a847e]";
 
   if (match.status === "not_played") {
     text = "Not Played";
@@ -676,7 +676,7 @@ function EmptyCard({
   text: string;
 }) {
   return (
-    <div className="mt-6 rounded-[24px] border border-dashed border-[#071827]/15 bg-white/40 p-7 text-center text-sm font-bold text-[#78909c]">
+    <div className="mt-6 rounded-[14px] border border-dashed border-[#24372f]/15 bg-white/40 p-7 text-center text-sm font-bold text-[#7a847e]">
       {text}
     </div>
   );
@@ -693,7 +693,7 @@ function ProcessStep({
 }) {
   return (
     <div className="flex gap-4">
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#d8ff45] text-xs font-black text-[#071827]">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#d9ef54] text-xs font-black text-[#24372f]">
         {number}
       </div>
 

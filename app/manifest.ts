@@ -2,13 +2,13 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "EQUIPO",
-    short_name: "EQUIPO",
-    description: "EQUIPO padel league",
+    name: "18",
+    short_name: "18",
+    description: "18 padel community Barcelona",
     start_url: "/",
     display: "standalone",
-    background_color: "#f4f2ea",
-    theme_color: "#0b2638",
+    background_color: "#eee9df",
+    theme_color: "#5f6b64",
     orientation: "portrait",
     icons: [
       {

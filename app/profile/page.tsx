@@ -1,9 +1,9 @@
 export default function ProfilePage() {
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
       <div className="mx-auto max-w-md">
 
-        <p className="mb-2 text-sm font-bold text-lime-300">
+        <p className="mb-2 text-sm font-bold text-[#5f6b64]">
           PLAYER
         </p>
 
@@ -11,9 +11,9 @@ export default function ProfilePage() {
           Profile
         </h1>
 
-        <section className="mt-6 rounded-3xl bg-white p-6 text-black">
+        <section className="mt-6 rounded-[16px] border border-[#5f6b64]/15 bg-white/45 p-6 text-[#24372f]">
           <div className="flex items-center gap-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-lime-300 text-2xl font-bold">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#5f6b64] text-2xl font-bold">
               DL
             </div>
 
@@ -52,7 +52,7 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        <section className="mt-5 rounded-3xl bg-white p-6 text-black">
+        <section className="mt-5 rounded-[16px] border border-[#5f6b64]/15 bg-white/45 p-6 text-[#24372f]">
           <h2 className="text-lg font-bold">
             Player information
           </h2>
@@ -87,8 +87,8 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        <section className="mt-5 rounded-3xl border border-white/10 bg-white/10 p-5">
-          <p className="text-sm font-bold text-lime-300">
+        <section className="mt-5 rounded-[14px] border border-[#5f6b64]/15 bg-transparent p-5">
+          <p className="text-sm font-bold text-[#5f6b64]">
             Partner
           </p>
 
@@ -96,7 +96,7 @@ export default function ProfilePage() {
             David Levy
           </p>
 
-          <p className="mt-1 text-sm text-white/60">
+          <p className="mt-1 text-sm text-[#7a847e]">
             Team Alpha
           </p>
         </section>

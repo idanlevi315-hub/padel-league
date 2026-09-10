@@ -11,11 +11,11 @@ export default function RulesPage() {
   const isEnglish = language === "en";
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
       <div className="mx-auto max-w-4xl px-5 pb-32 pt-7">
-        <header className="flex items-center justify-between border-b border-[#071827]/10 pb-5">
+        <header className="flex items-center justify-between border-b border-[#24372f]/10 pb-5">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2638] text-xs font-black text-[#d8ff45]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5f6b64] text-xs font-black text-[#d9ef54]">
               P
             </div>
 
@@ -23,7 +23,7 @@ export default function RulesPage() {
               <p className="text-[14px] font-black tracking-[0.14em]">
                 PADEL
               </p>
-              <p className="text-[9px] font-bold tracking-[0.34em] text-[#78909c]">
+              <p className="text-[9px] font-bold tracking-[0.34em] text-[#7a847e]">
                 LEAGUE
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function RulesPage() {
 
           <Link
             href="/join"
-            className="rounded-full bg-[#0b2638] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
+            className="rounded-full bg-[#5f6b64] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
           >
             {isEnglish ? "REGISTER" : "INSCRIBIRSE"}
           </Link>
@@ -40,7 +40,7 @@ export default function RulesPage() {
         <section className="pb-10 pt-10 md:pb-12 md:pt-14">
           <div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-[10px] font-black tracking-[0.24em] text-[#78909c]">
+              <p className="text-[10px] font-black tracking-[0.24em] text-[#7a847e]">
                 {isEnglish ? "LEAGUE RULES" : "REGLAMENTO"}
               </p>
 
@@ -61,14 +61,14 @@ export default function RulesPage() {
               </h1>
             </div>
 
-            <div className="flex rounded-[16px] bg-white p-1.5 shadow-[0_10px_30px_rgba(7,24,39,0.06)]">
+            <div className="flex rounded-[16px] bg-white p-1.5 shadow-none">
               <button
                 type="button"
                 onClick={() => setLanguage("en")}
                 className={`rounded-[12px] px-4 py-3 text-[10px] font-black tracking-[0.12em] transition ${
                   language === "en"
-                    ? "bg-[#0b2638] text-[#d8ff45]"
-                    : "text-[#78909c]"
+                    ? "bg-[#5f6b64] text-[#d9ef54]"
+                    : "text-[#7a847e]"
                 }`}
               >
                 ENGLISH
@@ -79,8 +79,8 @@ export default function RulesPage() {
                 onClick={() => setLanguage("es")}
                 className={`rounded-[12px] px-4 py-3 text-[10px] font-black tracking-[0.12em] transition ${
                   language === "es"
-                    ? "bg-[#0b2638] text-[#d8ff45]"
-                    : "text-[#78909c]"
+                    ? "bg-[#5f6b64] text-[#d9ef54]"
+                    : "text-[#7a847e]"
                 }`}
               >
                 ESPAÑOL
@@ -89,7 +89,7 @@ export default function RulesPage() {
           </div>
         </section>
 
-        <section className="grid grid-cols-3 overflow-hidden rounded-[24px] bg-[#0b2638]">
+        <section className="grid grid-cols-3 overflow-hidden rounded-[14px] bg-[#5f6b64]">
           <QuickStat
             value="3"
             label={isEnglish ? "POINTS / WIN" : "PUNTOS / VICTORIA"}
@@ -106,13 +106,13 @@ export default function RulesPage() {
           />
         </section>
 
-        <section className="mt-10 rounded-[30px] bg-white px-5 shadow-[0_18px_50px_rgba(7,24,39,0.06)] sm:px-8 md:px-10">
+        <section className="mt-10 rounded-[30px] bg-white px-5 shadow-none sm:px-8 md:px-10">
           {isEnglish ? <EnglishRules /> : <SpanishRules />}
         </section>
 
-        <section className="mt-8 rounded-[28px] bg-[#d8ff45] p-6 md:flex md:items-center md:justify-between md:gap-8 md:p-8">
+        <section className="mt-8 rounded-[16px] bg-[#d9ef54] p-6 md:flex md:items-center md:justify-between md:gap-8 md:p-8">
           <div>
-            <p className="text-[10px] font-black tracking-[0.2em] text-[#071827]/50">
+            <p className="text-[10px] font-black tracking-[0.2em] text-[#24372f]/50">
               {isEnglish ? "READY TO PLAY?" : "¿LISTO PARA JUGAR?"}
             </p>
 
@@ -122,7 +122,7 @@ export default function RulesPage() {
                 : "Inscríbete en la liga"}
             </h2>
 
-            <p className="mt-3 max-w-xl text-sm leading-6 text-[#071827]/65">
+            <p className="mt-3 max-w-xl text-sm leading-6 text-[#24372f]/65">
               {isEnglish
                 ? "By registering, players confirm that they have read and accepted the league rules applicable to the current season."
                 : "Al registrarse, los jugadores confirman que han leído y aceptado las reglas de la liga aplicables a la temporada actual."}
@@ -131,19 +131,19 @@ export default function RulesPage() {
 
           <Link
             href="/join"
-            className="mt-6 flex shrink-0 items-center justify-between gap-8 rounded-[16px] bg-[#0b2638] px-5 py-4 text-xs font-black tracking-[0.1em] text-white md:mt-0"
+            className="mt-6 flex shrink-0 items-center justify-between gap-8 rounded-[16px] bg-[#5f6b64] px-5 py-4 text-xs font-black tracking-[0.1em] text-white md:mt-0"
           >
             <span>
-              {isEnglish ? "REGISTER TEAM" : "INSCRIBIR EQUIPO"}
+              {isEnglish ? "REGISTER TEAM" : "INSCRIBIR 18"}
             </span>
             <span>→</span>
           </Link>
         </section>
 
-        <footer className="mt-8 border-t border-[#071827]/10 pt-5">
+        <footer className="mt-8 border-t border-[#24372f]/10 pt-5">
           <Link
             href="/"
-            className="text-xs font-black tracking-[0.12em] text-[#78909c]"
+            className="text-xs font-black tracking-[0.12em] text-[#7a847e]"
           >
             ← {isEnglish ? "BACK TO LEAGUE" : "VOLVER A LA LIGA"}
           </Link>
@@ -209,7 +209,7 @@ function EnglishRules() {
 
         <p>
           A match that is not played by the deadline is recorded as{" "}
-          <strong className="font-black text-[#071827]">NOT PLAYED</strong>{" "}
+          <strong className="font-black text-[#24372f]">NOT PLAYED</strong>{" "}
           and gives 0 points to both teams.
         </p>
 
@@ -222,7 +222,7 @@ function EnglishRules() {
       <RuleSection number="06" title="Standings">
         <p>Group standings are determined in the following order:</p>
 
-        <div className="mt-5 overflow-hidden rounded-[18px] bg-[#f4f2ea]">
+        <div className="mt-5 overflow-hidden rounded-[18px] bg-[#eee9df]">
           <RankingRow number="1" text="Match wins" />
           <RankingRow number="2" text="Set difference" />
           <RankingRow number="3" text="Game difference" />
@@ -379,7 +379,7 @@ function SpanishRules() {
         <p>
           Si un partido no se juega antes de finalizar el plazo, se registra
           como{" "}
-          <strong className="font-black text-[#071827]">NOT PLAYED</strong>{" "}
+          <strong className="font-black text-[#24372f]">NOT PLAYED</strong>{" "}
           y ambos equipos reciben 0 puntos.
         </p>
 
@@ -394,7 +394,7 @@ function SpanishRules() {
           La clasificación de cada grupo se determina en el siguiente orden:
         </p>
 
-        <div className="mt-5 overflow-hidden rounded-[18px] bg-[#f4f2ea]">
+        <div className="mt-5 overflow-hidden rounded-[18px] bg-[#eee9df]">
           <RankingRow number="1" text="Victorias" />
           <RankingRow number="2" text="Diferencia de sets" />
           <RankingRow number="3" text="Diferencia de juegos" />
@@ -509,9 +509,9 @@ function RuleSection({
   children: React.ReactNode;
 }) {
   return (
-    <article className="grid grid-cols-[42px_1fr] border-t border-[#071827]/10 py-8 first:border-t-0 sm:grid-cols-[70px_1fr] md:py-9">
+    <article className="grid grid-cols-[42px_1fr] border-t border-[#24372f]/10 py-8 first:border-t-0 sm:grid-cols-[70px_1fr] md:py-9">
       <div>
-        <span className="text-[10px] font-black tracking-[0.1em] text-[#78909c]">
+        <span className="text-[10px] font-black tracking-[0.1em] text-[#7a847e]">
           {number}
         </span>
       </div>
@@ -521,7 +521,7 @@ function RuleSection({
           {title}
         </h2>
 
-        <div className="mt-4 space-y-4 text-[15px] leading-7 text-[#78909c]">
+        <div className="mt-4 space-y-4 text-[15px] leading-7 text-[#7a847e]">
           {children}
         </div>
       </div>
@@ -537,12 +537,12 @@ function RankingRow({
   text: string;
 }) {
   return (
-    <div className="flex items-center gap-4 border-b border-[#071827]/8 px-4 py-3 last:border-b-0">
-      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0b2638] text-[10px] font-black text-[#d8ff45]">
+    <div className="flex items-center gap-4 border-b border-[#24372f]/8 px-4 py-3 last:border-b-0">
+      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#5f6b64] text-[10px] font-black text-[#d9ef54]">
         {number}
       </span>
 
-      <span className="text-sm font-bold text-[#071827]">
+      <span className="text-sm font-bold text-[#24372f]">
         {text}
       </span>
     </div>
@@ -558,7 +558,7 @@ function QuickStat({
 }) {
   return (
     <div className="border-r border-white/10 px-4 py-5 last:border-r-0 sm:px-6">
-      <p className="text-3xl font-black tracking-[-0.06em] text-[#d8ff45]">
+      <p className="text-3xl font-black tracking-[-0.06em] text-[#d9ef54]">
         {value}
       </p>
 
@@ -575,7 +575,7 @@ function Highlight({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mt-5 rounded-[16px] border-l-4 border-[#d8ff45] bg-[#0b2638] px-4 py-4 text-sm font-black leading-7 text-white">
+    <div className="mt-5 rounded-[16px] border-l-4 border-[#d9ef54] bg-[#5f6b64] px-4 py-4 text-sm font-black leading-7 text-white">
       {children}
     </div>
   );
@@ -594,17 +594,17 @@ function PlayoffGrid() {
       {matches.map(([left, right]) => (
         <div
           key={`${left}-${right}`}
-          className="flex items-center justify-between rounded-[14px] bg-[#f4f2ea] px-4 py-3"
+          className="flex items-center justify-between rounded-[14px] bg-[#eee9df] px-4 py-3"
         >
-          <span className="font-black text-[#071827]">
+          <span className="font-black text-[#24372f]">
             {left}
           </span>
 
-          <span className="text-[10px] font-black text-[#78909c]">
+          <span className="text-[10px] font-black text-[#7a847e]">
             VS
           </span>
 
-          <span className="font-black text-[#071827]">
+          <span className="font-black text-[#24372f]">
             {right}
           </span>
         </div>

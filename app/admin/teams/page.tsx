@@ -256,7 +256,7 @@ export default function AdminTeamsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#24372f] px-5 py-8 text-white">
       <div className="mx-auto max-w-md">
         <p className="text-sm font-bold text-lime-300">
           ADMIN

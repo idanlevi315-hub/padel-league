@@ -151,14 +151,14 @@ export default function AdminSettingsPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#071827] p-8 text-white">
+      <main className="min-h-screen bg-[#24372f] p-8 text-white">
         Loading settings...
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#24372f] px-5 py-8 text-white">
       <div className="mx-auto max-w-md">
         <p className="text-sm font-bold text-lime-300">
           ADMIN
@@ -273,7 +273,7 @@ export default function AdminSettingsPage() {
               <button
                 type="button"
                 onClick={toggleSeason}
-                className="mt-5 w-full rounded-2xl bg-[#071827] py-4 font-bold text-white"
+                className="mt-5 w-full rounded-2xl bg-[#24372f] py-4 font-bold text-white"
               >
                 {settings.season_started
                   ? "Return to Pre-season"

@@ -49,40 +49,40 @@ export default function MatchChats() {
 
   return (
     <section className="mt-8">
-      <p className="text-[9px] font-black tracking-[0.2em] text-[#78909c]">MATCH CHATS</p>
+      <p className="text-[9px] font-black tracking-[0.2em] text-[#7a847e]">MATCH CHATS</p>
       <h2 className="mt-2 text-2xl font-black tracking-[-0.04em]">{copy.title}</h2>
       <div className="mt-4 space-y-3">
         {registered === false ? (
-          <Link href="/join" className="block rounded-[22px] bg-white px-5 py-7 text-center text-[11px] font-black text-[#0b2638] shadow-sm">
+          <Link href="/join" className="block rounded-[22px] bg-white px-5 py-7 text-center text-[11px] font-black text-[#5f6b64] shadow-sm">
             {copy.register} →
           </Link>
         ) : matches.length ? (
           matches.map((match) => (
             <Link key={match.id} href={`/community/match/${match.id}`} className="block rounded-[22px] bg-white p-5 shadow-sm transition hover:-translate-y-0.5">
               <div className="flex items-center justify-between">
-                <span className="text-[9px] font-black tracking-[0.14em] text-[#78909c]">
+                <span className="text-[9px] font-black tracking-[0.14em] text-[#7a847e]">
                   {match.week ? `${copy.week} ${match.week}` : copy.match}
                 </span>
-                <span className="text-[#0b2638]">→</span>
+                <span className="text-[#5f6b64]">→</span>
               </div>
               <p className="mt-3 text-[16px] font-black">{match.team1}</p>
-              <p className="my-1 text-[9px] font-black text-[#78909c]">VS</p>
+              <p className="my-1 text-[9px] font-black text-[#7a847e]">VS</p>
               <p className="text-[16px] font-black">{match.team2}</p>
               {(match.match_date || match.location) && (
-                <p className="mt-3 text-[11px] text-[#78909c]">
+                <p className="mt-3 text-[11px] text-[#7a847e]">
                   {[match.match_date, match.match_time?.slice(0, 5), match.location].filter(Boolean).join(" · ")}
                 </p>
               )}
             </Link>
           ))
         ) : (
-          <div className="rounded-[22px] border border-[#071827]/8 bg-white px-5 py-8 text-center shadow-sm">
-            <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#f4f2ea] text-[#78909c]">
+          <div className="rounded-[22px] border border-[#24372f]/8 bg-white px-5 py-8 text-center shadow-sm">
+            <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#eee9df] text-[#7a847e]">
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
               </svg>
             </div>
-            <p className="mx-auto mt-4 max-w-xs text-[13px] leading-5 text-[#78909c]">{copy.empty}</p>
+            <p className="mx-auto mt-4 max-w-xs text-[13px] leading-5 text-[#7a847e]">{copy.empty}</p>
           </div>
         )}
       </div>

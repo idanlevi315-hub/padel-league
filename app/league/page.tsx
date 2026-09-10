@@ -189,9 +189,9 @@ export default function LeaguePage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+      <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
         <div className="mx-auto max-w-5xl px-5 py-10">
-          <p className="text-sm font-bold text-[#78909c]">
+          <p className="text-sm font-bold text-[#7a847e]">
             {copy.loading}
           </p>
         </div>
@@ -200,12 +200,12 @@ export default function LeaguePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
       <div className="mx-auto max-w-5xl px-5 pb-28 pt-7">
         {/* HEADER */}
-        <header className="flex items-center justify-between border-b border-[#071827]/10 pb-5">
+        <header className="flex items-center justify-between border-b border-[#24372f]/10 pb-5">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2638] text-xs font-black text-[#d8ff45]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5f6b64] text-xs font-black text-[#d9ef54]">
               P
             </div>
 
@@ -214,7 +214,7 @@ export default function LeaguePage() {
                 PADEL
               </p>
 
-              <p className="text-[9px] font-bold tracking-[0.34em] text-[#78909c]">
+              <p className="text-[9px] font-bold tracking-[0.34em] text-[#7a847e]">
                 LEAGUE
               </p>
             </div>
@@ -222,7 +222,7 @@ export default function LeaguePage() {
 
           <Link
             href="/matches"
-            className="rounded-full bg-[#0b2638] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
+            className="rounded-full bg-[#5f6b64] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
           >
             {copy.matches}
           </Link>
@@ -230,7 +230,7 @@ export default function LeaguePage() {
 
         {/* TITLE */}
         <section className="pt-10">
-          <p className="text-[10px] font-black tracking-[0.24em] text-[#78909c]">
+          <p className="text-[10px] font-black tracking-[0.24em] text-[#7a847e]">
             {copy.currentSeason}
           </p>
 
@@ -239,7 +239,7 @@ export default function LeaguePage() {
               {copy.standings}
             </h1>
 
-            <p className="pb-1 text-sm font-bold text-[#78909c]">
+            <p className="pb-1 text-sm font-bold text-[#7a847e]">
               {copy.topAdvance}
             </p>
           </div>
@@ -261,8 +261,8 @@ export default function LeaguePage() {
         </section>
 
         {/* RANKING */}
-        <section className="mt-8 rounded-[26px] bg-white p-6 shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-          <p className="text-[10px] font-black tracking-[0.18em] text-[#78909c]">
+        <section className="mt-8 rounded-[14px] bg-white p-6 shadow-none">
+          <p className="text-[10px] font-black tracking-[0.18em] text-[#7a847e]">
             {copy.rankingOrder}
           </p>
 
@@ -290,7 +290,7 @@ export default function LeaguePage() {
         </section>
 
         {/* SCORING */}
-        <section className="mt-6 rounded-[26px] bg-[#0b2638] px-6 py-7 text-white">
+        <section className="mt-6 rounded-[14px] bg-[#5f6b64] px-6 py-7 text-white">
           <div className="flex items-start justify-between gap-5">
             <div>
               <p className="text-[10px] font-black tracking-[0.18em] text-white/40">
@@ -306,24 +306,24 @@ export default function LeaguePage() {
               </p>
             </div>
 
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#d8ff45] text-2xl font-black text-[#071827]">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#d9ef54] text-2xl font-black text-[#24372f]">
               3
             </div>
           </div>
         </section>
 
         {/* FOOTER */}
-        <footer className="mt-10 flex items-center justify-between border-t border-[#071827]/10 pt-5">
+        <footer className="mt-10 flex items-center justify-between border-t border-[#24372f]/10 pt-5">
           <Link
             href="/"
-            className="text-xs font-black tracking-[0.12em] text-[#78909c]"
+            className="text-xs font-black tracking-[0.12em] text-[#7a847e]"
           >
             ← {copy.home}
           </Link>
 
           <Link
             href="/playoffs"
-            className="text-xs font-black tracking-[0.12em] text-[#071827]"
+            className="text-xs font-black tracking-[0.12em] text-[#24372f]"
           >
             {copy.playoffs} →
           </Link>
@@ -520,13 +520,13 @@ function StandingsTable({
   labels: PageCopy;
 }) {
   return (
-    <section className="overflow-hidden rounded-[26px] bg-white shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-      <div className="flex items-center justify-between bg-[#0b2638] px-5 py-4 text-white">
+    <section className="overflow-hidden rounded-[14px] bg-white shadow-none">
+      <div className="flex items-center justify-between bg-[#5f6b64] px-5 py-4 text-white">
         <p className="text-xs font-black tracking-[0.18em]">
           {title}
         </p>
 
-        <span className="rounded-full bg-[#d8ff45] px-3 py-1 text-xs font-black text-[#071827]">
+        <span className="rounded-full bg-[#d9ef54] px-3 py-1 text-xs font-black text-[#24372f]">
           {standings.length}
         </span>
       </div>
@@ -534,32 +534,32 @@ function StandingsTable({
       <div className="overflow-x-auto">
         <table className="w-full min-w-[560px] border-collapse">
           <thead>
-            <tr className="border-b border-[#071827]/10 text-left">
-              <th className="px-4 py-4 text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+            <tr className="border-b border-[#24372f]/10 text-left">
+              <th className="px-4 py-4 text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 #
               </th>
 
-              <th className="px-4 py-4 text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+              <th className="px-4 py-4 text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 {labels.team}
               </th>
 
-              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 {labels.played}
               </th>
 
-              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 {labels.won}
               </th>
 
-              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 {labels.lost}
               </th>
 
-              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 {labels.sets}
               </th>
 
-              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#78909c]">
+              <th className="px-3 py-4 text-center text-[10px] font-black tracking-[0.14em] text-[#7a847e]">
                 {labels.points}
               </th>
             </tr>
@@ -570,7 +570,7 @@ function StandingsTable({
               <tr>
                 <td
                   colSpan={7}
-                  className="px-5 py-8 text-sm text-[#78909c]"
+                  className="px-5 py-8 text-sm text-[#7a847e]"
                 >
                   {labels.noTeams}
                 </td>
@@ -583,14 +583,14 @@ function StandingsTable({
               return (
                 <tr
                   key={row.team}
-                  className="border-b border-[#071827]/8 last:border-b-0"
+                  className="border-b border-[#24372f]/8 last:border-b-0"
                 >
                   <td className="px-4 py-4">
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-black ${
                         qualifies
-                          ? "bg-[#d8ff45] text-[#071827]"
-                          : "bg-[#f4f2ea] text-[#78909c]"
+                          ? "bg-[#d9ef54] text-[#24372f]"
+                          : "bg-[#eee9df] text-[#7a847e]"
                       }`}
                     >
                       {index + 1}
@@ -601,7 +601,7 @@ function StandingsTable({
                     {row.team}
                   </td>
 
-                  <td className="px-3 py-4 text-center text-sm text-[#78909c]">
+                  <td className="px-3 py-4 text-center text-sm text-[#7a847e]">
                     {row.played}
                   </td>
 
@@ -609,16 +609,16 @@ function StandingsTable({
                     {row.wins}
                   </td>
 
-                  <td className="px-3 py-4 text-center text-sm text-[#78909c]">
+                  <td className="px-3 py-4 text-center text-sm text-[#7a847e]">
                     {row.losses}
                   </td>
 
-                  <td className="px-3 py-4 text-center text-sm text-[#78909c]">
+                  <td className="px-3 py-4 text-center text-sm text-[#7a847e]">
                     {row.setsFor}-{row.setsAgainst}
                   </td>
 
                   <td className="px-3 py-4 text-center">
-                    <span className="rounded-full bg-[#0b2638] px-3 py-1.5 text-sm font-black text-white">
+                    <span className="rounded-full bg-[#5f6b64] px-3 py-1.5 text-sm font-black text-white">
                       {row.points}
                     </span>
                   </td>
@@ -641,7 +641,7 @@ function RankingRule({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f4f2ea] text-xs font-black text-[#78909c]">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#eee9df] text-xs font-black text-[#7a847e]">
         {number}
       </div>
 

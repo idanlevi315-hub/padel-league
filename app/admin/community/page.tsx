@@ -225,13 +225,13 @@ export default function AdminCommunityPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] px-5 py-8 text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
       <div className="mx-auto max-w-3xl">
         <div className="flex items-center justify-between gap-4">
           <div>
             <Link
               href="/admin"
-              className="text-[10px] font-black tracking-[0.14em] text-[#78909c]"
+              className="text-[10px] font-black tracking-[0.14em] text-[#7a847e]"
             >
               ← ADMIN
             </Link>
@@ -240,7 +240,7 @@ export default function AdminCommunityPage() {
               Community Chat
             </h1>
 
-            <p className="mt-1 text-sm text-[#78909c]">
+            <p className="mt-1 text-sm text-[#7a847e]">
               Moderate community messages.
             </p>
           </div>
@@ -260,7 +260,7 @@ export default function AdminCommunityPage() {
           </button>
         </div>
 
-        <div className="mt-5 flex items-center justify-between rounded-2xl bg-[#0b2638] px-5 py-4 text-white">
+        <div className="mt-5 flex items-center justify-between rounded-2xl bg-[#5f6b64] px-5 py-4 text-white">
           <div>
             <p className="text-[9px] font-black tracking-[0.15em] text-white/40">
               MESSAGES
@@ -273,7 +273,7 @@ export default function AdminCommunityPage() {
 
           <Link
             href="/community/chat"
-            className="rounded-xl bg-[#d8ff45] px-4 py-3 text-[9px] font-black text-[#071827]"
+            className="rounded-xl bg-[#d9ef54] px-4 py-3 text-[9px] font-black text-[#24372f]"
           >
             OPEN CHAT →
           </Link>
@@ -286,14 +286,14 @@ export default function AdminCommunityPage() {
         )}
 
         {success && (
-          <div className="mt-4 rounded-2xl bg-[#d8ff45] px-4 py-3 text-sm font-bold text-[#071827]">
+          <div className="mt-4 rounded-2xl bg-[#d9ef54] px-4 py-3 text-sm font-bold text-[#24372f]">
             {success}
           </div>
         )}
 
         <div className="mt-6 space-y-3">
           {loading ? (
-            <div className="rounded-2xl bg-white p-6 text-center text-sm text-[#78909c]">
+            <div className="rounded-2xl bg-white p-6 text-center text-sm text-[#7a847e]">
               Loading...
             </div>
           ) : messages.length === 0 ? (
@@ -302,7 +302,7 @@ export default function AdminCommunityPage() {
                 Chat is empty
               </p>
 
-              <p className="mt-2 text-sm text-[#78909c]">
+              <p className="mt-2 text-sm text-[#7a847e]">
                 There are no community messages.
               </p>
             </div>
@@ -358,16 +358,16 @@ function MessageRow({
               {item.sender_name}
             </p>
 
-            <p className="text-[10px] text-[#78909c]">
+            <p className="text-[10px] text-[#7a847e]">
               {date}
             </p>
 
-            <p className="text-[9px] font-bold text-[#78909c]">
+            <p className="text-[9px] font-bold text-[#7a847e]">
               #{item.id}
             </p>
           </div>
 
-          <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-6 text-[#071827]/75">
+          <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-6 text-[#24372f]/75">
             {item.message}
           </p>
         </div>

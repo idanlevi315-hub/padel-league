@@ -310,7 +310,7 @@ export default function AdminPlayoffPage() {
           />
         </div>
 
-        <section className="mt-8 border border-white/10 bg-[#071827] p-6">
+        <section className="mt-8 border border-white/10 bg-[#24372f] p-6">
           <p className="text-xs font-black tracking-[0.18em] text-white/40">
             PLAYOFF STATUS
           </p>
@@ -378,7 +378,7 @@ function StandingTable({
   standings: Standing[];
 }) {
   return (
-    <div className="border border-white/10 bg-[#071827] p-5">
+    <div className="border border-white/10 bg-[#24372f] p-5">
       <h2 className="text-sm font-black tracking-[0.18em] text-white/50">
         {title}
       </h2>

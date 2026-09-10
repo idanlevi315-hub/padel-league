@@ -53,9 +53,9 @@ export default function TeamsPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+      <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
         <div className="mx-auto max-w-4xl px-5 py-10">
-          <p className="text-sm font-bold text-[#78909c]">
+          <p className="text-sm font-bold text-[#7a847e]">
             Loading teams...
           </p>
         </div>
@@ -64,11 +64,11 @@ export default function TeamsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] text-[#071827]">
+    <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
       <div className="mx-auto max-w-4xl px-5 pb-24 pt-7">
-        <header className="flex items-center justify-between border-b border-[#071827]/10 pb-5">
+        <header className="flex items-center justify-between border-b border-[#24372f]/10 pb-5">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2638] text-xs font-black text-[#d8ff45]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5f6b64] text-xs font-black text-[#d9ef54]">
               P
             </div>
 
@@ -77,7 +77,7 @@ export default function TeamsPage() {
                 PADEL
               </p>
 
-              <p className="text-[9px] font-bold tracking-[0.34em] text-[#78909c]">
+              <p className="text-[9px] font-bold tracking-[0.34em] text-[#7a847e]">
                 LEAGUE
               </p>
             </div>
@@ -85,14 +85,14 @@ export default function TeamsPage() {
 
           <Link
             href="/join"
-            className="rounded-full bg-[#0b2638] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
+            className="rounded-full bg-[#5f6b64] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-white"
           >
             REGISTER
           </Link>
         </header>
 
         <section className="pt-10">
-          <p className="text-[10px] font-black tracking-[0.24em] text-[#78909c]">
+          <p className="text-[10px] font-black tracking-[0.24em] text-[#7a847e]">
             CURRENT SEASON
           </p>
 
@@ -101,7 +101,7 @@ export default function TeamsPage() {
               TEAMS
             </h1>
 
-            <p className="pb-1 text-sm font-bold text-[#78909c]">
+            <p className="pb-1 text-sm font-bold text-[#7a847e]">
               {teams.length} active
             </p>
           </div>
@@ -120,13 +120,13 @@ export default function TeamsPage() {
         </section>
 
         {unassigned.length > 0 && (
-          <section className="mt-5 rounded-[24px] bg-white p-5 shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-            <div className="flex items-center justify-between border-b border-[#071827]/10 pb-4">
-              <p className="text-[10px] font-black tracking-[0.18em] text-[#78909c]">
+          <section className="mt-5 rounded-[14px] bg-white p-5 shadow-none">
+            <div className="flex items-center justify-between border-b border-[#24372f]/10 pb-4">
+              <p className="text-[10px] font-black tracking-[0.18em] text-[#7a847e]">
                 UNASSIGNED
               </p>
 
-              <span className="text-xs font-black text-[#0b2638]">
+              <span className="text-xs font-black text-[#5f6b64]">
                 {unassigned.length}
               </span>
             </div>
@@ -140,15 +140,15 @@ export default function TeamsPage() {
         )}
 
         {teams.length === 0 && (
-          <section className="mt-8 rounded-[24px] bg-white p-6 shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-            <p className="text-sm text-[#78909c]">
+          <section className="mt-8 rounded-[14px] bg-white p-6 shadow-none">
+            <p className="text-sm text-[#7a847e]">
               No active teams yet.
             </p>
           </section>
         )}
 
-        <section className="mt-10 rounded-[26px] bg-[#d8ff45] px-6 py-7">
-          <p className="text-[10px] font-black tracking-[0.18em] text-[#071827]/50">
+        <section className="mt-10 rounded-[14px] bg-[#d9ef54] px-6 py-7">
+          <p className="text-[10px] font-black tracking-[0.18em] text-[#24372f]/50">
             REGISTRATION
           </p>
 
@@ -158,29 +158,29 @@ export default function TeamsPage() {
                 Join the league
               </h2>
 
-              <p className="mt-2 text-sm text-[#071827]/60">
+              <p className="mt-2 text-sm text-[#24372f]/60">
                 Register your team for the current season.
               </p>
             </div>
 
             <Link
               href="/join"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#071827] text-xl text-white"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#24372f] text-xl text-white"
             >
               →
             </Link>
           </div>
         </section>
 
-        <footer className="mt-10 flex items-center justify-between border-t border-[#071827]/10 pt-5">
+        <footer className="mt-10 flex items-center justify-between border-t border-[#24372f]/10 pt-5">
           <Link
             href="/"
-            className="text-xs font-black tracking-[0.12em] text-[#78909c]"
+            className="text-xs font-black tracking-[0.12em] text-[#7a847e]"
           >
             ← HOME
           </Link>
 
-          <span className="text-[10px] font-black tracking-[0.12em] text-[#071827]/25">
+          <span className="text-[10px] font-black tracking-[0.12em] text-[#24372f]/25">
             PADEL LEAGUE
           </span>
         </footer>
@@ -197,20 +197,20 @@ function GroupBlock({
   teams: Team[];
 }) {
   return (
-    <section className="overflow-hidden rounded-[26px] bg-white shadow-[0_14px_35px_rgba(7,24,39,0.06)]">
-      <div className="flex items-center justify-between bg-[#0b2638] px-5 py-4 text-white">
+    <section className="overflow-hidden rounded-[14px] bg-white shadow-none">
+      <div className="flex items-center justify-between bg-[#5f6b64] px-5 py-4 text-white">
         <p className="text-xs font-black tracking-[0.18em]">
           {title}
         </p>
 
-        <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-[#d8ff45] px-2 text-xs font-black text-[#071827]">
+        <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-[#d9ef54] px-2 text-xs font-black text-[#24372f]">
           {teams.length}
         </span>
       </div>
 
       <div className="px-5">
         {teams.length === 0 ? (
-          <p className="py-6 text-sm text-[#78909c]">
+          <p className="py-6 text-sm text-[#7a847e]">
             No teams assigned.
           </p>
         ) : (
@@ -235,10 +235,10 @@ function TeamRow({
   rank?: number;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-[#071827]/8 py-5 last:border-b-0">
+    <div className="flex items-center justify-between gap-4 border-b border-[#24372f]/8 py-5 last:border-b-0">
       <div className="flex min-w-0 items-center gap-4">
         {rank !== undefined && (
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f4f2ea] text-xs font-black text-[#78909c]">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#eee9df] text-xs font-black text-[#7a847e]">
             {rank}
           </div>
         )}
@@ -248,14 +248,14 @@ function TeamRow({
             {team.name}
           </p>
 
-          <p className="mt-1 truncate text-sm text-[#78909c]">
+          <p className="mt-1 truncate text-sm text-[#7a847e]">
             {team.player1} · {team.player2}
           </p>
         </div>
       </div>
 
       {team.level !== null && (
-        <div className="shrink-0 rounded-full bg-[#d8ff45] px-3 py-1.5 text-xs font-black text-[#071827]">
+        <div className="shrink-0 rounded-full bg-[#d9ef54] px-3 py-1.5 text-xs font-black text-[#24372f]">
           {team.level}
         </div>
       )}

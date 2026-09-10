@@ -61,8 +61,8 @@ export default function BottomNav() {
   ];
 
   return (
-    <nav className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-24px)] max-w-[520px] -translate-x-1/2">
-      <div className="grid grid-cols-5 rounded-[22px] border border-black/10 bg-[#111715]/95 p-2 shadow-[0_18px_50px_rgba(17,23,21,0.20)] backdrop-blur-xl">
+    <nav className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-24px)] max-w-[560px] -translate-x-1/2">
+      <div className="grid grid-cols-5 rounded-[16px] border border-[#5f6b64]/20 bg-[#eee9df]/92 p-1.5 shadow-none backdrop-blur-xl">
         {items.map((item) => {
           const active =
             item.href === "/"
@@ -75,10 +75,10 @@ export default function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex min-h-[58px] flex-col items-center justify-center gap-1.5 rounded-[16px] transition ${
+              className={`flex min-h-[56px] flex-col items-center justify-center gap-1 rounded-[12px] transition ${
                 active
-                  ? "bg-[#d9ef54] text-[#111715]"
-                  : "text-white/45 hover:text-white"
+                  ? "bg-[#5f6b64] text-[#f4efe5]"
+                  : "text-[#5f6b64]/55 hover:text-[#5f6b64]"
               }`}
             >
               <Icon active={active} />

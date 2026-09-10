@@ -247,16 +247,16 @@ export default function ResultPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#071827] p-8 text-white">
+      <main className="min-h-screen bg-[#eee9df] p-8 text-[#24372f]">
         Loading match...
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
       <div className="mx-auto max-w-md">
-        <p className="text-sm font-bold text-lime-300">
+        <p className="text-sm font-bold text-[#5f6b64]">
           MATCH RESULT
         </p>
 
@@ -318,7 +318,7 @@ export default function ResultPage() {
               </div>
             </section>
 
-            <div className="mt-4 rounded-2xl bg-white/5 p-4 text-sm text-white/60">
+            <div className="mt-4 rounded-2xl bg-white/5 p-4 text-sm text-[#7a847e]">
               Valid set scores include 6-0 to
               6-4, 7-5 and 7-6.
             </div>
@@ -327,7 +327,7 @@ export default function ResultPage() {
               type="button"
               onClick={submitResult}
               disabled={saving}
-              className="mt-5 w-full rounded-2xl bg-lime-300 py-4 text-lg font-bold text-black disabled:opacity-50"
+              className="mt-5 w-full rounded-2xl bg-[#5f6b64] py-4 text-lg font-bold text-black disabled:opacity-50"
             >
               {saving
                 ? "Submitting..."
@@ -344,7 +344,7 @@ export default function ResultPage() {
 
         <Link
           href="/matches"
-          className="mt-6 block text-center text-white/50"
+          className="mt-6 block text-center text-[#7a847e]"
         >
           ← Back to matches
         </Link>

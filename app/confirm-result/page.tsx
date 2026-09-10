@@ -95,16 +95,16 @@ export default function ConfirmResultPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#071827] p-8 text-white">
+      <main className="min-h-screen bg-[#eee9df] p-8 text-[#24372f]">
         Loading result...
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
       <div className="mx-auto max-w-md">
-        <p className="text-sm font-bold text-lime-300">
+        <p className="text-sm font-bold text-[#5f6b64]">
           RESULT CONFIRMATION
         </p>
 
@@ -114,7 +114,7 @@ export default function ConfirmResultPage() {
 
         {match && (
           <>
-            <section className="mt-6 rounded-3xl bg-white p-6 text-black">
+            <section className="mt-6 rounded-[16px] border border-[#5f6b64]/15 bg-white/45 p-6 text-[#24372f]">
               <p className="text-sm font-bold text-gray-400">
                 WEEK {match.week}
               </p>
@@ -159,7 +159,7 @@ export default function ConfirmResultPage() {
             <button
               type="button"
               onClick={confirmResult}
-              className="mt-6 w-full rounded-2xl bg-lime-300 py-4 text-lg font-bold text-black"
+              className="mt-6 w-full rounded-2xl bg-[#5f6b64] py-4 text-lg font-bold text-black"
             >
               Confirm Result
             </button>
@@ -182,7 +182,7 @@ export default function ConfirmResultPage() {
 
         <Link
           href="/matches"
-          className="mt-6 block text-center text-white/50"
+          className="mt-6 block text-center text-[#7a847e]"
         >
           ← Back to matches
         </Link>

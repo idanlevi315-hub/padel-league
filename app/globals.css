@@ -25,3 +25,30 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* 18 — minimalist Japanese-inspired system */
+::selection {
+  background: #d9ef54;
+  color: #24372f;
+}
+
+main h1,
+main h2,
+main h3 {
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+}
+
+main p,
+main span,
+main a,
+main button,
+main input,
+main select,
+main textarea {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+main [class*="shadow-"] {
+  box-shadow: none !important;
+}

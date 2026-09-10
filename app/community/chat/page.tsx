@@ -51,7 +51,7 @@ export default function CommunityChatPage() {
       ? {
           back: "COMUNIDAD",
           title: "Chat",
-          subtitle: "Comunidad EQUIPO",
+          subtitle: "Comunidad 18",
           empty: "Todavía no hay mensajes.",
           message: "Escribe un mensaje...",
           send: "ENVIAR",
@@ -68,7 +68,7 @@ export default function CommunityChatPage() {
       : {
           back: "COMMUNITY",
           title: "Chat",
-          subtitle: "EQUIPO Community",
+          subtitle: "18 Community",
           empty: "No messages yet.",
           message: "Write a message...",
           send: "SEND",
@@ -410,8 +410,8 @@ export default function CommunityChatPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] pb-40 text-[#071827]">
-      <header className="sticky top-0 z-30 bg-[#0b2638] text-white">
+    <main className="min-h-screen bg-[#eee9df] pb-40 text-[#24372f]">
+      <header className="sticky top-0 z-30 bg-[#5f6b64] text-white">
         <div className="mx-auto grid max-w-3xl grid-cols-3 items-center px-5 py-4">
           <Link
             href="/community"
@@ -422,10 +422,10 @@ export default function CommunityChatPage() {
 
           <div className="text-center">
             <div className="text-[15px] font-black tracking-[0.18em]">
-              EQUIPO
+              18
             </div>
 
-            <div className="mt-0.5 whitespace-nowrap text-[7px] font-black tracking-[0.28em] text-[#d8ff45]">
+            <div className="mt-0.5 whitespace-nowrap text-[7px] font-black tracking-[0.28em] text-[#d9ef54]">
               PLAY TOGETHER
             </div>
           </div>
@@ -441,14 +441,14 @@ export default function CommunityChatPage() {
           {copy.title}
         </h1>
 
-        <p className="mt-1 text-[12px] text-[#78909c]">
+        <p className="mt-1 text-[12px] text-[#7a847e]">
           {copy.subtitle}
         </p>
 
-        <div className="mt-3 h-1 w-9 rounded-full bg-[#d8ff45]" />
+        <div className="mt-3 h-1 w-9 rounded-full bg-[#d9ef54]" />
 
         {!loading && !player && (
-          <div className="mt-6 rounded-[24px] bg-[#0b2638] p-6 text-center text-white">
+          <div className="mt-6 rounded-[14px] bg-[#5f6b64] p-6 text-center text-white">
             <p className="text-lg font-black">
               {
                 copy.registrationRequired
@@ -463,7 +463,7 @@ export default function CommunityChatPage() {
 
             <Link
               href="/join"
-              className="mt-5 inline-flex min-h-[48px] items-center justify-center rounded-[16px] bg-[#d8ff45] px-6 text-[10px] font-black text-[#071827]"
+              className="mt-5 inline-flex min-h-[48px] items-center justify-center rounded-[16px] bg-[#d9ef54] px-6 text-[10px] font-black text-[#24372f]"
             >
               {copy.register}
             </Link>
@@ -472,11 +472,11 @@ export default function CommunityChatPage() {
 
         <div className="mt-6 space-y-3">
           {loading ? (
-            <div className="py-10 text-center text-[#78909c]">
+            <div className="py-10 text-center text-[#7a847e]">
               ...
             </div>
           ) : messages.length === 0 ? (
-            <div className="rounded-[20px] bg-white px-5 py-10 text-center text-[13px] text-[#78909c]">
+            <div className="rounded-[20px] bg-white px-5 py-10 text-center text-[13px] text-[#7a847e]">
               {copy.empty}
             </div>
           ) : (
@@ -542,7 +542,7 @@ export default function CommunityChatPage() {
         <div className="fixed bottom-[92px] left-0 right-0 z-40 px-3">
           <form
             onSubmit={sendMessage}
-            className="mx-auto max-w-3xl rounded-[22px] border border-[#071827]/10 bg-white p-2 shadow-[0_15px_45px_rgba(7,24,39,0.15)]"
+            className="mx-auto max-w-3xl rounded-[22px] border border-[#24372f]/10 bg-white p-2 shadow-none"
           >
             <div className="flex items-center gap-2">
               <input
@@ -558,7 +558,7 @@ export default function CommunityChatPage() {
                   copy.message
                 }
                 maxLength={500}
-                className="min-w-0 flex-1 rounded-[16px] bg-[#f4f2ea] px-4 py-3.5 text-[14px] outline-none"
+                className="min-w-0 flex-1 rounded-[16px] bg-[#eee9df] px-4 py-3.5 text-[14px] outline-none"
               />
 
               <button
@@ -567,7 +567,7 @@ export default function CommunityChatPage() {
                   sending ||
                   !message.trim()
                 }
-                className="h-[46px] rounded-[16px] bg-[#d8ff45] px-5 text-[10px] font-black text-[#071827] disabled:opacity-35"
+                className="h-[46px] rounded-[16px] bg-[#d9ef54] px-5 text-[10px] font-black text-[#24372f] disabled:opacity-35"
               >
                 {sending
                   ? "..."
@@ -627,7 +627,7 @@ function MessageBubble({
         <div
           className={`rounded-[20px] px-4 py-3 ${
             own
-              ? "rounded-br-[6px] bg-[#0b2638] text-white"
+              ? "rounded-br-[6px] bg-[#5f6b64] text-white"
               : "rounded-bl-[6px] bg-white shadow-sm"
           }`}
         >
@@ -635,8 +635,8 @@ function MessageBubble({
             <span
               className={`text-[10px] font-black ${
                 own
-                  ? "text-[#d8ff45]"
-                  : "text-[#0b2638]"
+                  ? "text-[#d9ef54]"
+                  : "text-[#5f6b64]"
               }`}
             >
               {own
@@ -648,7 +648,7 @@ function MessageBubble({
               className={`text-[9px] ${
                 own
                   ? "text-white/30"
-                  : "text-[#78909c]"
+                  : "text-[#7a847e]"
               }`}
             >
               {time}
@@ -669,7 +669,7 @@ function MessageBubble({
             className={`mt-1 whitespace-pre-wrap break-words text-[13px] leading-5 ${
               own
                 ? "text-white/90"
-                : "text-[#071827]/80"
+                : "text-[#24372f]/80"
             }`}
           >
             {item.message}

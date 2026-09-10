@@ -88,12 +88,12 @@ export default function MatchChatPage() {
 
   if (!loading && (!player || !match)) {
     return (
-      <main className="min-h-screen bg-[#f4f2ea] px-5 py-8 text-[#071827]">
+      <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
         <div className="mx-auto max-w-3xl">
-          <Link href="/community" className="text-[9px] font-black tracking-[0.14em] text-[#78909c]">← {copy.back}</Link>
-          <div className="mt-8 rounded-[24px] bg-[#0b2638] p-7 text-center text-white">
+          <Link href="/community" className="text-[9px] font-black tracking-[0.14em] text-[#7a847e]">← {copy.back}</Link>
+          <div className="mt-8 rounded-[14px] bg-[#5f6b64] p-7 text-center text-white">
             <p className="text-lg font-black">{copy.denied}</p>
-            {!player && <Link href="/join" className="mt-5 inline-flex rounded-xl bg-[#d8ff45] px-5 py-3 text-[10px] font-black text-[#071827]">{copy.register}</Link>}
+            {!player && <Link href="/join" className="mt-5 inline-flex rounded-xl bg-[#d9ef54] px-5 py-3 text-[10px] font-black text-[#24372f]">{copy.register}</Link>}
           </div>
         </div>
       </main>
@@ -101,33 +101,33 @@ export default function MatchChatPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f2ea] pb-40 text-[#071827]">
-      <header className="sticky top-0 z-30 bg-[#0b2638] text-white">
+    <main className="min-h-screen bg-[#eee9df] pb-40 text-[#24372f]">
+      <header className="sticky top-0 z-30 bg-[#5f6b64] text-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-5 py-4">
           <Link href="/community" className="text-[9px] font-black tracking-[0.12em] text-white/50">← {copy.back}</Link>
-          <div className="text-[13px] font-black tracking-[0.18em]">EQUIPO</div>
+          <div className="text-[13px] font-black tracking-[0.18em]">18</div>
           <span className="max-w-[100px] truncate text-[9px] font-black text-white/45">{player?.full_name}</span>
         </div>
       </header>
 
       <section className="mx-auto max-w-3xl px-4 py-5">
-        <p className="text-[9px] font-black tracking-[0.14em] text-[#78909c]">{match?.week ? `${copy.week} ${match.week}` : ""}</p>
+        <p className="text-[9px] font-black tracking-[0.14em] text-[#7a847e]">{match?.week ? `${copy.week} ${match.week}` : ""}</p>
         <h1 className="mt-1 text-3xl font-black tracking-[-0.05em]">{copy.title}</h1>
-        <p className="mt-2 text-[14px] font-black">{match?.team1} <span className="mx-2 text-[#78909c]">VS</span> {match?.team2}</p>
+        <p className="mt-2 text-[14px] font-black">{match?.team1} <span className="mx-2 text-[#7a847e]">VS</span> {match?.team2}</p>
         {(match?.match_date || match?.location) && (
-          <p className="mt-2 text-[11px] text-[#78909c]">{[match.match_date, match.match_time?.slice(0, 5), match.location].filter(Boolean).join(" · ")}</p>
+          <p className="mt-2 text-[11px] text-[#7a847e]">{[match.match_date, match.match_time?.slice(0, 5), match.location].filter(Boolean).join(" · ")}</p>
         )}
 
         <div className="mt-6 space-y-3">
-          {loading ? <p className="py-10 text-center text-[#78909c]">...</p> : !messages.length ? (
-            <div className="rounded-[20px] bg-white p-8 text-center text-[13px] text-[#78909c]">{copy.empty}</div>
+          {loading ? <p className="py-10 text-center text-[#7a847e]">...</p> : !messages.length ? (
+            <div className="rounded-[20px] bg-white p-8 text-center text-[13px] text-[#7a847e]">{copy.empty}</div>
           ) : messages.map((item) => {
             const own = item.player_id === player?.id;
             return (
               <div key={item.id} className={`flex ${own ? "justify-end" : "justify-start"}`}>
-                <div className={`max-w-[82%] rounded-[20px] px-4 py-3 ${own ? "rounded-br-[6px] bg-[#0b2638] text-white" : "rounded-bl-[6px] bg-white"}`}>
+                <div className={`max-w-[82%] rounded-[20px] px-4 py-3 ${own ? "rounded-br-[6px] bg-[#5f6b64] text-white" : "rounded-bl-[6px] bg-white"}`}>
                   <div className="flex items-center gap-3">
-                    <span className={`text-[10px] font-black ${own ? "text-[#d8ff45]" : "text-[#0b2638]"}`}>{own ? "YOU" : item.sender_name}</span>
+                    <span className={`text-[10px] font-black ${own ? "text-[#d9ef54]" : "text-[#5f6b64]"}`}>{own ? "YOU" : item.sender_name}</span>
                     {own && <button type="button" onClick={() => remove(item.id)} className="text-[8px] font-black text-white/35">{copy.remove}</button>}
                   </div>
                   <p className="mt-1 whitespace-pre-wrap break-words text-[13px] leading-5">{item.message}</p>
@@ -144,8 +144,8 @@ export default function MatchChatPage() {
         <div className="fixed bottom-[92px] left-0 right-0 z-40 px-3">
           <form onSubmit={send} className="mx-auto flex max-w-3xl gap-2 rounded-[22px] bg-white p-2 shadow-xl">
             <input value={text} onChange={(e) => setText(e.target.value)} maxLength={500} placeholder={copy.placeholder}
-              className="min-w-0 flex-1 rounded-[16px] bg-[#f4f2ea] px-4 py-3.5 text-[14px] outline-none" />
-            <button type="submit" disabled={sending || !text.trim()} className="rounded-[16px] bg-[#d8ff45] px-5 text-[10px] font-black disabled:opacity-35">
+              className="min-w-0 flex-1 rounded-[16px] bg-[#eee9df] px-4 py-3.5 text-[14px] outline-none" />
+            <button type="submit" disabled={sending || !text.trim()} className="rounded-[16px] bg-[#d9ef54] px-5 text-[10px] font-black disabled:opacity-35">
               {sending ? "..." : copy.send}
             </button>
           </form>

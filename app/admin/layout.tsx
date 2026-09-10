@@ -48,7 +48,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (checking) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[#020b12] text-white">
-        <p className="text-xs font-black tracking-[0.22em] text-white/40">EQUIPO</p>
+        <p className="text-xs font-black tracking-[0.22em] text-white/40">18</p>
       </main>
     );
   }
@@ -59,7 +59,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <button
           type="button"
           onClick={logout}
-          className="border border-white/15 bg-[#071827]/95 px-4 py-2 text-xs font-black tracking-[0.12em] text-white/60 backdrop-blur transition hover:border-[#d8ff45] hover:text-[#d8ff45]"
+          className="border border-white/15 bg-[#24372f]/95 px-4 py-2 text-xs font-black tracking-[0.12em] text-white/60 backdrop-blur transition hover:border-[#d9ef54] hover:text-[#d9ef54]"
         >
           LOG OUT
         </button>

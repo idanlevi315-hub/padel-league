@@ -245,7 +245,7 @@ export default function JoinPage() {
       IMPORTANT:
       The player never sees this token.
       It stays in this browser and is used
-      by EQUIPO to identify the player.
+      by 18 to identify the player.
     */
     window.localStorage.setItem(
       "equipo_player_token",
@@ -283,7 +283,7 @@ export default function JoinPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#071827] p-8 text-white">
+      <main className="min-h-screen bg-[#eee9df] p-8 text-[#24372f]">
         Loading registration...
       </main>
     );
@@ -294,17 +294,17 @@ export default function JoinPage() {
     settings?.season_started;
 
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#eee9df] px-5 py-8 text-[#24372f]">
       <div className="mx-auto max-w-md">
-        <p className="text-sm font-bold text-lime-300">
-          EQUIPO
+        <p className="text-sm font-bold text-[#5f6b64]">
+          18
         </p>
 
         <h1 className="mt-2 text-3xl font-bold">
           Join the League
         </h1>
 
-        <p className="mt-2 text-white/60">
+        <p className="mt-2 text-[#7a847e]">
           Register your team for the next season.
         </p>
 
@@ -328,7 +328,7 @@ export default function JoinPage() {
               className={`mt-1 font-bold ${
                 closed
                   ? "text-red-300"
-                  : "text-lime-300"
+                  : "text-[#5f6b64]"
               }`}
             >
               {closed
@@ -339,7 +339,7 @@ export default function JoinPage() {
         </div>
 
         {closed ? (
-          <div className="mt-6 rounded-3xl bg-white p-6 text-black">
+          <div className="mt-6 rounded-[16px] border border-[#5f6b64]/15 bg-white/45 p-6 text-[#24372f]">
             <h2 className="text-xl font-bold">
               Registration closed
             </h2>
@@ -351,7 +351,7 @@ export default function JoinPage() {
         ) : (
           <form
             onSubmit={submitRegistration}
-            className="mt-6 space-y-5 rounded-3xl bg-white p-6 text-black"
+            className="mt-6 space-y-5 rounded-[16px] border border-[#5f6b64]/15 bg-white/45 p-6 text-[#24372f]"
           >
             <div>
               <label className="text-sm font-bold">
@@ -366,7 +366,7 @@ export default function JoinPage() {
                   )
                 }
                 placeholder="Daniel Cohen"
-                className="mt-2 w-full rounded-xl border border-gray-200 p-3 outline-none focus:border-black"
+                className="mt-2 w-full rounded-xl border border-[#5f6b64]/20 p-3 outline-none focus:border-black"
               />
             </div>
 
@@ -384,7 +384,7 @@ export default function JoinPage() {
                   )
                 }
                 placeholder="daniel@email.com"
-                className="mt-2 w-full rounded-xl border border-gray-200 p-3 outline-none focus:border-black"
+                className="mt-2 w-full rounded-xl border border-[#5f6b64]/20 p-3 outline-none focus:border-black"
               />
             </div>
 
@@ -402,7 +402,7 @@ export default function JoinPage() {
                   )
                 }
                 placeholder="+34 600 000 000"
-                className="mt-2 w-full rounded-xl border border-gray-200 p-3 outline-none focus:border-black"
+                className="mt-2 w-full rounded-xl border border-[#5f6b64]/20 p-3 outline-none focus:border-black"
               />
             </div>
 
@@ -419,8 +419,8 @@ export default function JoinPage() {
                   }
                   className={`rounded-xl p-3 font-bold ${
                     hasPartner
-                      ? "bg-lime-300"
-                      : "bg-gray-100"
+                      ? "bg-[#5f6b64]"
+                      : "bg-[#e7e1d6]"
                   }`}
                 >
                   Yes
@@ -433,8 +433,8 @@ export default function JoinPage() {
                   }
                   className={`rounded-xl p-3 font-bold ${
                     !hasPartner
-                      ? "bg-lime-300"
-                      : "bg-gray-100"
+                      ? "bg-[#5f6b64]"
+                      : "bg-[#e7e1d6]"
                   }`}
                 >
                   No
@@ -456,13 +456,13 @@ export default function JoinPage() {
                     )
                   }
                   placeholder="David Levy"
-                  className="mt-2 w-full rounded-xl border border-gray-200 p-3 outline-none focus:border-black"
+                  className="mt-2 w-full rounded-xl border border-[#5f6b64]/20 p-3 outline-none focus:border-black"
                 />
               </div>
             )}
 
             {!hasPartner && (
-              <div className="rounded-xl bg-gray-100 p-4">
+              <div className="rounded-xl bg-[#e7e1d6] p-4">
                 <p className="font-bold">
                   Looking for a partner
                 </p>
@@ -489,7 +489,7 @@ export default function JoinPage() {
                     e.target.value
                   )
                 }
-                className="mt-2 w-full rounded-xl border border-gray-200 bg-white p-3"
+                className="mt-2 w-full rounded-xl border border-[#5f6b64]/20 bg-white p-3"
               >
                 {levels.map(
                   (item) => (
@@ -507,7 +507,7 @@ export default function JoinPage() {
               </select>
             </div>
 
-            <div className="rounded-2xl bg-gray-100 p-4">
+            <div className="rounded-2xl bg-[#e7e1d6] p-4">
               <label className="flex cursor-pointer items-start gap-3">
                 <input
                   type="checkbox"
@@ -538,7 +538,7 @@ export default function JoinPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full rounded-2xl bg-lime-300 px-5 py-4 font-black disabled:opacity-50"
+              className="w-full rounded-2xl bg-[#5f6b64] px-5 py-4 font-black disabled:opacity-50"
             >
               {submitting
                 ? "Submitting..."
@@ -551,7 +551,7 @@ export default function JoinPage() {
           <div
             className={`mt-5 rounded-2xl p-4 ${
               success
-                ? "bg-lime-300 text-black"
+                ? "bg-[#5f6b64] text-black"
                 : "bg-white/10 text-white"
             }`}
           >
@@ -562,7 +562,7 @@ export default function JoinPage() {
             {success && (
               <Link
                 href="/community/chat"
-                className="mt-4 inline-flex rounded-xl bg-[#0b2638] px-5 py-3 text-xs font-black text-white"
+                className="mt-4 inline-flex rounded-xl bg-[#5f6b64] px-5 py-3 text-xs font-black text-white"
               >
                 OPEN COMMUNITY CHAT →
               </Link>

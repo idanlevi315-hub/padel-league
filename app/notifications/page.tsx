@@ -71,8 +71,8 @@ export default function NotificationsPage() {
       const registration = await navigator.serviceWorker.ready;
       await registration.showNotification("18", {
         body: "Notifications are working on this device.",
-        icon: "/equipo-icon.svg",
-        badge: "/equipo-icon.svg",
+        icon: "/18-icon.svg",
+        badge: "/18-icon.svg",
         data: { url: "/notifications" },
       });
       setMessage(copy.success);

@@ -20,13 +20,12 @@ export default function CommunityPage() {
         </header>
 
         <section className="pb-8 pt-10">
-          <p className="text-[10px] font-semibold tracking-[0.16em] text-[#7a847e]">18 · BARCELONA</p>
-          <h1 className="mt-2 text-4xl font-semibold tracking-[-0.04em]">{es ? "Comunidad" : "Community"}</h1>
-        </section>        <section className="border-y border-[#5f6b64]/15 py-5">
+          <h1 className="text-4xl font-semibold tracking-[-0.04em]">{es ? "Comunidad" : "Community"}</h1>
+        </section>
+        <section className="border-y border-[#5f6b64]/15 py-5">
           <Link href="/community/chat" className="group flex items-center justify-between">
             <div>
               <p className="text-[10px] font-semibold tracking-[0.12em] text-[#7a847e]">{es ? "CHAT GENERAL" : "COMMUNITY CHAT"}</p>
-              <h2 className="mt-1 text-xl font-semibold">18</h2>
             </div>
             <span className="text-lg text-[#5f6b64] transition group-hover:translate-x-1">→</span>
           </Link>

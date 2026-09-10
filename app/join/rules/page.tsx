@@ -14,20 +14,7 @@ export default function RulesPage() {
     <main className="min-h-screen bg-[#eee9df] text-[#24372f]">
       <div className="mx-auto max-w-4xl px-5 pb-32 pt-7">
         <header className="flex items-center justify-between border-b border-[#24372f]/10 pb-5">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5f6b64] text-xs font-black text-[#d9ef54]">
-              P
-            </div>
-
-            <div>
-              <p className="text-[14px] font-black tracking-[0.14em]">
-                PADEL
-              </p>
-              <p className="text-[9px] font-bold tracking-[0.34em] text-[#7a847e]">
-                LEAGUE
-              </p>
-            </div>
-          </Link>
+          <Link href="/" className="text-[34px] font-semibold tracking-[-0.06em] text-[#5f6b64]">18</Link>
 
           <Link
             href="/join"

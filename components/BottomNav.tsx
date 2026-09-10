@@ -9,7 +9,6 @@ export default function BottomNav() {
   const { language } = useLanguage();
 
   if (
-    pathname === "/" ||
     pathname.startsWith("/admin") ||
     pathname === "/login"
   ) {

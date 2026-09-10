@@ -5,34 +5,33 @@ import BottomNav from "../components/BottomNav";
 import { LanguageProvider } from "../components/LanguageProvider";
 import ServiceWorkerRegistration from "../components/ServiceWorkerRegistration";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://padel-league.vercel.app"),
   title: "18 | Padel Community Barcelona",
-  description:
-    "18 is a Barcelona padel community for matches, competition and connection.",
+  description: "18 is a Barcelona padel community for matches, competition and connection.",
   applicationName: "18",
   manifest: "/manifest.webmanifest",
+  openGraph: {
+    title: "18 | Padel Community Barcelona",
+    description: "Padel community in Barcelona.",
+    url: "/",
+    siteName: "18",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "18 | Padel Community Barcelona",
+    description: "Padel community in Barcelona.",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <LanguageProvider>
           <ServiceWorkerRegistration />
           <div className="pb-24">{children}</div>

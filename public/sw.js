@@ -6,6 +6,8 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
 });
 
+self.addEventListener("fetch", () => {});
+
 self.addEventListener("push", (event) => {
   let data = {};
 
@@ -15,11 +17,11 @@ self.addEventListener("push", (event) => {
     data = { body: event.data ? event.data.text() : "" };
   }
 
-  const title = data.title || "EQUIPO";
+  const title = data.title || "18";
   const options = {
-    body: data.body || "You have a new EQUIPO update.",
-    icon: "/equipo-icon.svg",
-    badge: "/equipo-icon.svg",
+    body: data.body || "You have a new 18 update.",
+    icon: "/18-icon.svg",
+    badge: "/18-icon.svg",
     data: { url: data.url || "/notifications" },
   };
 

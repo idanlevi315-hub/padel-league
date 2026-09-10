@@ -1,77 +1,158 @@
-const notifications = [
-  {
-    title: "Match reminder",
-    text: "Your match against Team Bravo must be played before Sunday.",
-    time: "2 hours ago",
-    type: "match",
-  },
-  {
-    title: "Result waiting for confirmation",
-    text: "Team Charlie submitted a result. Please review and confirm it.",
-    time: "Yesterday",
-    type: "result",
-  },
-  {
-    title: "League update",
-    text: "Week 4 fixtures are now available.",
-    time: "2 days ago",
-    type: "league",
-  },
-  {
-    title: "Playoff qualification",
-    text: "You are currently in a playoff position.",
-    time: "3 days ago",
-    type: "playoff",
-  },
-];
+/* eslint-disable react-hooks/set-state-in-effect */
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useLanguage } from "../../components/LanguageProvider";
+
+type PermissionState = NotificationPermission | "unsupported";
 
 export default function NotificationsPage() {
+  const { language } = useLanguage();
+  const [permission, setPermission] = useState<PermissionState>("default");
+  const [working, setWorking] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const copy = language === "es"
+    ? {
+        back: "INICIO",
+        title: "Notificaciones",
+        text: "Activa las notificaciones para recibir avisos de EQUIPO.",
+        enable: "ACTIVAR NOTIFICACIONES",
+        enabled: "NOTIFICACIONES ACTIVADAS",
+        blocked: "LAS NOTIFICACIONES ESTÁN BLOQUEADAS",
+        unsupported: "ESTE NAVEGADOR NO ADMITE NOTIFICACIONES",
+        test: "ENVIAR NOTIFICACIÓN DE PRUEBA",
+        success: "Notificación de prueba enviada.",
+      }
+    : {
+        back: "HOME",
+        title: "Notifications",
+        text: "Enable notifications to receive EQUIPO updates.",
+        enable: "ENABLE NOTIFICATIONS",
+        enabled: "NOTIFICATIONS ENABLED",
+        blocked: "NOTIFICATIONS ARE BLOCKED",
+        unsupported: "NOTIFICATIONS ARE NOT SUPPORTED",
+        test: "SEND TEST NOTIFICATION",
+        success: "Test notification sent.",
+      };
+
+  useEffect(() => {
+    if (!("Notification" in window) || !("serviceWorker" in navigator)) {
+      setPermission("unsupported");
+      return;
+    }
+
+    setPermission(Notification.permission);
+  }, []);
+
+  async function enableNotifications() {
+    if (!("Notification" in window) || !("serviceWorker" in navigator)) {
+      setPermission("unsupported");
+      return;
+    }
+    setWorking(true);
+    setMessage("");
+
+    const result = await Notification.requestPermission();
+    setPermission(result);
+    setWorking(false);
+  }
+
+  async function sendTestNotification() {
+    if (permission !== "granted" || !("serviceWorker" in navigator)) {
+      return;
+    }
+
+    setWorking(true);
+    setMessage("");
+
+    try {
+      const registration = await navigator.serviceWorker.ready;
+      await registration.showNotification("EQUIPO", {
+        body: "Notifications are working on this device.",
+        icon: "/equipo-icon.svg",
+        badge: "/equipo-icon.svg",
+        data: { url: "/notifications" },
+      });
+      setMessage(copy.success);
+    } catch (error) {
+      console.error(error);
+      setMessage("Could not send the test notification.");
+    }
+
+    setWorking(false);
+  }
+
+  const statusText =
+    permission === "granted"
+      ? copy.enabled
+      : permission === "denied"
+        ? copy.blocked
+        : permission === "unsupported"
+          ? copy.unsupported
+          : copy.enable;
+
   return (
-    <main className="min-h-screen bg-[#071827] px-5 py-8 text-white">
+    <main className="min-h-screen bg-[#f4f2ea] px-5 py-8 text-[#071827]">
       <div className="mx-auto max-w-md">
-        <p className="mb-2 text-sm font-bold text-lime-300">
-          UPDATES
-        </p>
+        <Link
+          href="/"
+          className="text-[9px] font-black tracking-[0.14em] text-[#78909c]"
+        >
+          ← {copy.back}
+        </Link>
 
-        <h1 className="text-3xl font-bold">
-          Notifications
-        </h1>
+        <div className="mt-7 rounded-[28px] bg-[#0b2638] p-7 text-white">
+          <p className="text-[10px] font-black tracking-[0.22em] text-[#d8ff45]">
+            EQUIPO
+          </p>
+          <h1 className="mt-3 text-3xl font-black tracking-[-0.05em]">
+            {copy.title}
+          </h1>
+          <p className="mt-2 text-sm leading-6 text-white/55">
+            {copy.text}
+          </p>
 
-        <p className="mt-2 text-white/60">
-          Match reminders, results and league updates.
-        </p>
-
-        <section className="mt-6 space-y-3">
-          {notifications.map((notification, index) => (
-            <div
-              key={index}
-              className="rounded-3xl bg-white p-5 text-black"
-            >
-              <div className="flex gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-lime-300 text-xl">
-                  {notification.type === "match" && "📅"}
-                  {notification.type === "result" && "✓"}
-                  {notification.type === "league" && "🎾"}
-                  {notification.type === "playoff" && "🏆"}
-                </div>
-
-                <div className="flex-1">
-                  <h2 className="font-bold">
-                    {notification.title}
-                  </h2>
-
-                  <p className="mt-1 text-sm leading-5 text-gray-500">
-                    {notification.text}
-                  </p>
-
-                  <p className="mt-3 text-xs font-medium text-gray-400">
-                    {notification.time}
-                  </p>
-                </div>
-              </div>
+          <div className="mt-7 rounded-[20px] bg-white/8 p-5">
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-[10px] font-black tracking-[0.12em] text-white/40">
+                STATUS
+              </span>
+              <span className="text-right text-[10px] font-black text-[#d8ff45]">
+                {statusText}
+              </span>
             </div>
-          ))}
-        </section>
+          </div>
+
+          {permission === "default" && (
+            <button
+              type="button"
+              onClick={enableNotifications}
+              disabled={working}
+              className="mt-4 w-full rounded-[18px] bg-[#d8ff45] px-5 py-4 text-[10px] font-black text-[#071827] disabled:opacity-40"
+            >
+              {working ? "..." : copy.enable}
+            </button>
+          )}
+
+          {permission === "granted" && (
+            <button
+              type="button"
+              onClick={sendTestNotification}
+              disabled={working}
+              className="mt-4 w-full rounded-[18px] bg-[#d8ff45] px-5 py-4 text-[10px] font-black text-[#071827] disabled:opacity-40"
+            >
+              {working ? "..." : copy.test}
+            </button>
+          )}
+
+          {message && (
+            <p className="mt-4 text-center text-[11px] font-bold text-[#d8ff45]">
+              {message}
+            </p>
+          )}
+        </div>
       </div>
     </main>
   );

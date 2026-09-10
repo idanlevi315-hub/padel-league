@@ -4,39 +4,37 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    async function checkAdmin() {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
+    let alive = true;
 
+    async function checkAdmin() {
+      const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         router.replace("/login");
         return;
       }
 
-      setChecking(false);
+      const { data, error } = await supabase.rpc("is_admin");
+      if (error || data !== true) {
+        await supabase.auth.signOut();
+        router.replace("/login");
+        return;
+      }
+      if (alive) setChecking(false);
     }
 
     checkAdmin();
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) {
-        router.replace("/login");
-      }
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session) router.replace("/login");
     });
 
     return () => {
+      alive = false;
       subscription.unsubscribe();
     };
   }, [router]);
@@ -50,9 +48,7 @@ export default function AdminLayout({
   if (checking) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[#020b12] text-white">
-        <p className="text-xs font-black tracking-[0.22em] text-white/40">
-          PADEL LEAGUE
-        </p>
+        <p className="text-xs font-black tracking-[0.22em] text-white/40">EQUIPO</p>
       </main>
     );
   }
@@ -63,12 +59,11 @@ export default function AdminLayout({
         <button
           type="button"
           onClick={logout}
-          className="border border-white/15 bg-[#071827]/95 px-4 py-2 text-xs font-black tracking-[0.12em] text-white/60 backdrop-blur transition hover:border-[#c7ff37] hover:text-[#c7ff37]"
+          className="border border-white/15 bg-[#071827]/95 px-4 py-2 text-xs font-black tracking-[0.12em] text-white/60 backdrop-blur transition hover:border-[#d8ff45] hover:text-[#d8ff45]"
         >
           LOG OUT
         </button>
       </div>
-
       {children}
     </>
   );

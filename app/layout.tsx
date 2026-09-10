@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EQUIPO | Padel Community",
+  title: "18 | Padel Community Barcelona",
   description:
-    "EQUIPO is a padel community for weekly matches, competition and connection.",
-  applicationName: "EQUIPO",
+    "18 is a Barcelona padel community for matches, competition and connection.",
+  applicationName: "18",
   manifest: "/manifest.webmanifest",
 };
 

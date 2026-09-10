@@ -62,7 +62,7 @@ export default function BottomNav() {
 
   return (
     <nav className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-24px)] max-w-[520px] -translate-x-1/2">
-      <div className="grid grid-cols-5 rounded-[22px] border border-white/10 bg-[#0b2638]/95 p-2 shadow-[0_18px_50px_rgba(7,24,39,0.28)] backdrop-blur-xl">
+      <div className="grid grid-cols-5 rounded-[22px] border border-black/10 bg-[#111715]/95 p-2 shadow-[0_18px_50px_rgba(17,23,21,0.20)] backdrop-blur-xl">
         {items.map((item) => {
           const active =
             item.href === "/"
@@ -77,7 +77,7 @@ export default function BottomNav() {
               href={item.href}
               className={`flex min-h-[58px] flex-col items-center justify-center gap-1.5 rounded-[16px] transition ${
                 active
-                  ? "bg-[#d8ff45] text-[#071827]"
+                  ? "bg-[#d9ef54] text-[#111715]"
                   : "text-white/45 hover:text-white"
               }`}
             >

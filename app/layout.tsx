@@ -9,11 +9,14 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://padel-league.vercel.app"),
+  metadataBase: new URL("https://18padel.es"),
   title: "18 | Padel Community Barcelona",
   description: "18 is a Barcelona padel community for matches, competition and connection.",
   applicationName: "18",
   manifest: "/manifest.webmanifest",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "18 | Padel Community Barcelona",
     description: "Padel community in Barcelona.",

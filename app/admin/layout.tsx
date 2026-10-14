@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import { supabase } from "../../lib/supabase";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
@@ -55,7 +57,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   return (
     <>
-      <div className="fixed right-4 top-4 z-[100]">
+      <div className="fixed right-4 top-4 z-[100] flex items-center gap-2">
+        {pathname !== "/admin" && (
+          <Link
+            href="/admin"
+            className="border border-white/15 bg-[#24372f]/95 px-4 py-2 text-xs font-black tracking-[0.06em] text-white backdrop-blur transition hover:border-[#d9ef54] hover:text-[#d9ef54]"
+          >
+            ← ADMIN HOME
+          </Link>
+        )}
         <button
           type="button"
           onClick={logout}

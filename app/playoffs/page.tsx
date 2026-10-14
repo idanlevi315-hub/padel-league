@@ -252,6 +252,7 @@ export default function PlayoffsPage() {
     );
   }
 
+  const smallLeague = standings.A.length >= 2 && standings.A.length < 4 && standings.B.length >= 2 && standings.B.length < 4;
   const A = standings.A;
   const B = standings.B;
 
@@ -384,19 +385,19 @@ export default function PlayoffsPage() {
               </h1>
 
               <p className="mt-3 text-sm font-bold text-[#7a847e]">
-                Quarterfinals → Semifinals → Final →
+                {smallLeague ? "Semifinals → Final →" : "Quarterfinals → Semifinals → Final →"}
                 Champion
               </p>
             </div>
 
             <div className="flex items-center gap-3">
               <StageStat
-                value="8"
+                value={smallLeague ? "4" : "8"}
                 label="TEAMS"
               />
 
               <StageStat
-                value="7"
+                value={smallLeague ? "3" : "7"}
                 label="MATCHES"
               />
 
@@ -428,10 +429,30 @@ export default function PlayoffsPage() {
             </div>
 
             <div className="rounded-full bg-[#d9ef54] px-4 py-2 text-[10px] font-black tracking-[0.12em] text-[#24372f]">
-              TOP 4 EACH GROUP
+              {smallLeague ? "TOP 2 EACH GROUP" : "TOP 4 EACH GROUP"}
             </div>
           </div>
 
+          {smallLeague && (
+            <div className="rounded-[22px] bg-[#102f43] p-5 text-white">
+              <div className="grid gap-5 lg:grid-cols-[1fr_1fr_0.7fr] lg:items-center">
+                <div className="space-y-4">
+                  <RoundTitle title="SEMIFINALS" />
+                  <FutureMatchCard code="SF1" team1={sf1?.team1 ?? projectedTeam(A, 0)} team2={sf1?.team2 ?? projectedTeam(B, 1)} match={sf1} score={scoreText(sf1)} />
+                  <FutureMatchCard code="SF2" team1={sf2?.team1 ?? projectedTeam(B, 0)} team2={sf2?.team2 ?? projectedTeam(A, 1)} match={sf2} score={scoreText(sf2)} />
+                </div>
+                <div className="space-y-4">
+                  <RoundTitle title="FINAL" />
+                  <FutureMatchCard code="CHAMPIONSHIP FINAL" team1={finalMatch?.team1 ?? (sf1?.result_status === "confirmed" ? sf1.winner ?? "Winner SF1" : "Winner SF1")} team2={finalMatch?.team2 ?? (sf2?.result_status === "confirmed" ? sf2.winner ?? "Winner SF2" : "Winner SF2")} match={finalMatch} score={scoreText(finalMatch)} final />
+                </div>
+                <div className="space-y-4">
+                  <RoundTitle title="CHAMPION" />
+                  <ChampionCard champion={champion} />
+                </div>
+              </div>
+            </div>
+          )}
+          {!smallLeague && (<>
           {/* DESKTOP */}
           <div className="hidden lg:block">
             <div className="rounded-[22px] bg-[#102f43] px-4 py-5">
@@ -768,6 +789,7 @@ export default function PlayoffsPage() {
               </div>
             </div>
           </div>
+          </>)}
         </section>
 
         <section className="mt-8 grid gap-5 md:grid-cols-[1.4fr_1fr]">
@@ -778,20 +800,18 @@ export default function PlayoffsPage() {
             </p>
 
             <h2 className="mt-2 text-2xl font-black tracking-[-0.04em]">
-              Top four from each group
+              {smallLeague ? "Top two from each group" : "Top four from each group"}
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[#7a847e]">
-              The final group standings determine the
-              eight playoff seeds. Group A and Group B
-              cross in the quarterfinals.
+              {smallLeague ? "The top two teams from each group advance directly to the semifinals." : "The final group standings determine the eight playoff seeds. Group A and Group B cross in the quarterfinals."}
             </p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <SeedPair left="A1" right="B4" />
-              <SeedPair left="B2" right="A3" />
-              <SeedPair left="A2" right="B3" />
-              <SeedPair left="B1" right="A4" />
+              {smallLeague ? <SeedPair left="A1" right="B2" /> : <SeedPair left="A1" right="B4" />}
+              {smallLeague ? <SeedPair left="B1" right="A2" /> : <SeedPair left="B2" right="A3" />}
+              {!smallLeague && <SeedPair left="A2" right="B3" />}
+              {!smallLeague && <SeedPair left="B1" right="A4" />}
             </div>
           </div>
 

@@ -185,6 +185,9 @@ export default function AdminPlayoffPage() {
   const groupA = calculateStandings("A");
   const groupB = calculateStandings("B");
 
+  const semifinals = playoffMatches.filter(m => m.playoff_round === "semifinal");
+  const finals = playoffMatches.filter(m => m.playoff_round === "final");
+  const smallLeague = groupA.length >= 2 && groupA.length < 4 && groupB.length >= 2 && groupB.length < 4;
   const quarterfinals = playoffMatches.filter(
     (match) => match.playoff_round === "quarterfinal"
   );
@@ -194,6 +197,41 @@ export default function AdminPlayoffPage() {
     groupMatches.every(
       (match) => match.result_status === "confirmed"
     );
+
+  async function createSemifinals() {
+    setMessage("");
+    if (!smallLeague || !allGroupMatchesConfirmed || playoffMatches.length) {
+      setMessage("Complete group matches first; playoffs must not already exist.");
+      return;
+    }
+    setCreating(true);
+    const { error } = await supabase.from("matches").insert([
+      { week: 1002, team1: groupA[0].team, team2: groupB[1].team, phase: "playoff", playoff_round: "semifinal", bracket_slot: 1, status: "scheduled", result_status: "scheduled" },
+      { week: 1002, team1: groupB[0].team, team2: groupA[1].team, phase: "playoff", playoff_round: "semifinal", bracket_slot: 2, status: "scheduled", result_status: "scheduled" }
+    ]);
+    setCreating(false);
+    if (error) { setMessage("Error: " + error.message); return; }
+    await loadData();
+    setMessage("Semifinals created.");
+  }
+
+  async function createFinal() {
+    setMessage("");
+    if (finals.length || semifinals.length !== 2 || semifinals.some(m => m.result_status !== "confirmed" || !m.winner)) {
+      setMessage("Confirm both semifinals first.");
+      return;
+    }
+    setCreating(true);
+    const sorted = [...semifinals].sort((a,b) => (a.bracket_slot ?? 0) - (b.bracket_slot ?? 0));
+    const { error } = await supabase.from("matches").insert({
+      week: 1003, team1: sorted[0].winner, team2: sorted[1].winner,
+      phase: "playoff", playoff_round: "final", bracket_slot: 1, status: "scheduled", result_status: "scheduled"
+    });
+    setCreating(false);
+    if (error) { setMessage("Error: " + error.message); return; }
+    await loadData();
+    setMessage("Final created.");
+  }
 
   async function createQuarterfinals() {
     setMessage("");
@@ -212,7 +250,7 @@ export default function AdminPlayoffPage() {
       return;
     }
 
-    if (quarterfinals.length > 0) {
+    if (playoffMatches.length > 0) {
       setMessage("Quarterfinals already exist.");
       return;
     }
@@ -318,31 +356,34 @@ export default function AdminPlayoffPage() {
           <div className="mt-5 grid gap-4 sm:grid-cols-3">
             <StatusItem
               label="Group A Teams"
-              value={`${groupA.length}/4`}
+              value={`${groupA.length}/${smallLeague ? 2 : 4}`}
             />
 
             <StatusItem
               label="Group B Teams"
-              value={`${groupB.length}/4`}
+              value={`${groupB.length}/${smallLeague ? 2 : 4}`}
             />
 
             <StatusItem
-              label="Quarterfinals"
-              value={`${quarterfinals.length}/4`}
+              label={smallLeague ? "Semifinals" : "Quarterfinals"}
+              value={smallLeague ? `${semifinals.length}/2` : `${quarterfinals.length}/4`}
             />
           </div>
 
           <button
             type="button"
-            onClick={createQuarterfinals}
+            onClick={smallLeague ? createSemifinals : createQuarterfinals}
             disabled={creating}
             className="mt-7 w-full bg-[#c7ff37] px-5 py-4 font-black text-[#020b12] disabled:opacity-40"
           >
             {creating
               ? "CREATING..."
-              : "CREATE QUARTERFINALS"}
+              : smallLeague ? "CREATE SEMIFINALS" : "CREATE QUARTERFINALS"}
           </button>
 
+          {smallLeague && semifinals.length === 2 && finals.length === 0 && (
+            <button type="button" onClick={createFinal} disabled={creating} className="mt-3 w-full bg-white px-5 py-4 font-black text-[#020b12] disabled:opacity-40">CREATE FINAL (AFTER SEMIFINAL RESULTS)</button>
+          )}
           {message && (
             <p className="mt-4 text-sm text-white/60">
               {message}
